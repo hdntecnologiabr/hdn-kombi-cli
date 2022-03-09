@@ -1,0 +1,9 @@
+# PODS configuration
+pods:
+  replicas: 1
+acr:
+  repository: ticketmicroservices.azurecr.io/
+  pullSecret: acr-auth
+
+sidecar:
+  enabled: true

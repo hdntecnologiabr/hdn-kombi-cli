@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost",
+  "reporter": "cypress-multi-reporters",
+  "pluginsFile": "config/plugins.js",
+  "supportFile": "config/support.js",
+  "fixturesFolder": "mocks",
+  "integrationFolder": "features",
+  "chromeWebSecurity": false,
+  "viewportWidth": 1280,
+  "viewportHeight": 660,
+  "video": false,
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
+}

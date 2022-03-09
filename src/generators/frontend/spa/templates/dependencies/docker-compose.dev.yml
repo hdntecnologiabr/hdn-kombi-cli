@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  ingress_api:
+    image: nginx:alpine
+    container_name: ingress_api
+    restart: unless-stopped
+    tty: true
+    ports:
+      - '80:80'
+    depends_on:
+      - auth_service
+    volumes:
+      - ./ingress/nginx-dev.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-network
+
+  auth_service:
+    build:
+      context: ./mocks/auth-service
+    container_name: auth_service_mock
+    ports:
+      - '8906:8906'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

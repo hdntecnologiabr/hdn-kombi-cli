@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: <%= normalizedMfeName %>-service-account
+  labels:
+    account: <%= normalizedMfeName %>-service-account
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <%= normalizedMfeName %>
+spec:
+  replicas: {{ .Values.pods.replicas }}
+  selector:
+    matchLabels:
+      app: <%= normalizedMfeName %>
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: <%= normalizedMfeName %>
+        release: {{ .Release.Name }}
+      annotations:
+        sidecar.istio.io/inject: {{ .Values.sidecar.enabled | quote }}
+    spec:
+      serviceAccountName: <%= normalizedMfeName %>-service-account
+      terminationGracePeriodSeconds: 180
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+      imagePullSecrets:
+        - name: {{ .Values.acr.pullSecret }}
+      containers:
+        - name: <%= normalizedMfeName %>
+          image: 'ticketmicroservices.azurecr.io/<%= normalizedMfeName %>:{{ .Chart.AppVersion }}'
+          imagePullPolicy: Always
+          ports:
+            - name: port-shell-app
+              containerPort: 8080
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
+            requests:
+              cpu: 500m
+              memory: 512Mi

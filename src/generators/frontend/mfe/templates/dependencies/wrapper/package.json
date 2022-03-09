@@ -1,0 +1,22 @@
+{
+  "name": "wrapper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production"
+  },
+  "dependencies": {
+    "single-spa": "^5.9.3",
+    "single-spa-layout": "1.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/runtime": "^7.15.3",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-config-single-spa": "^5.1.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

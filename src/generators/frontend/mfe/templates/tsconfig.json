@@ -1,0 +1,24 @@
+{
+  "extends": "ts-config-single-spa",
+  "files": ["src/<%= normalizedMfeName %>.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"],
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext", "ES2021"],
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2021"
+  }
+}

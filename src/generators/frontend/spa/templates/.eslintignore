@@ -1,0 +1,15 @@
+/config
+/scripts
+/public
+/node_modules
+/coverage
+/build
+/dist
+/styleguide
+/ci/
+/component-test
+/smoke-test
+**/*.test.js
+**/*.test.jsx
+**/*.test.ts
+**/*.test.tsx
