@@ -20,7 +20,7 @@ $ npm install -g hdn-kombi-cli
 $ kombi COMMAND
 running command...
 $ kombi (--version)
-hdn-kombi-cli/0.0.3-beta win32-x64 node-v16.13.2
+hdn-kombi-cli/0.0.4-beta win32-x64 node-v16.14.0
 $ kombi --help [COMMAND]
 USAGE
   $ kombi COMMAND
@@ -44,7 +44,7 @@ USAGE
 
 <!-- commands -->
 * [`kombi create`](#kombi-create)
-* [`kombi create dotnet [FILE]`](#kombi-create-dotnet-file)
+* [`kombi create dotnet`](#kombi-create-dotnet)
 * [`kombi create react`](#kombi-create-react)
 * [`kombi help [COMMAND]`](#kombi-help-command)
 * [`kombi plugins`](#kombi-plugins)
@@ -53,6 +53,7 @@ USAGE
 * [`kombi plugins:link PLUGIN`](#kombi-pluginslink-plugin)
 * [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin)
 * [`kombi plugins update`](#kombi-plugins-update)
+* [`kombi test [FILE]`](#kombi-test-file)
 
 ## `kombi create`
 
@@ -60,11 +61,10 @@ Scaffolding your HDN project
 
 ```
 USAGE
-  $ kombi create [-h] [-t react|.net]
+  $ kombi create [-t react|dotnet]
 
 FLAGS
-  -h, --help               Show CLI help.
-  -t, --type=(react|.net)  language type to create
+  -t, --type=(react|dotnet)  Language type to create
 
 DESCRIPTION
   Scaffolding your HDN project
@@ -74,25 +74,21 @@ EXAMPLES
 
   $ kombi create -t react
 
-  $ kombi create -t .net
+  $ kombi create -t dotnet
 ```
 
-_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.3-beta/dist/commands/create/index.ts)_
+_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.4-beta/dist/commands/create/index.ts)_
 
-## `kombi create dotnet [FILE]`
+## `kombi create dotnet`
 
-describe the command here
+Scaffolding your .Net project
 
 ```
 USAGE
-  $ kombi create dotnet [FILE] [-n <value>] [-f]
-
-FLAGS
-  -f, --force
-  -n, --name=<value>  name to print
+  $ kombi create dotnet
 
 DESCRIPTION
-  describe the command here
+  Scaffolding your .Net project
 
 EXAMPLES
   $ kombi create dotnet
@@ -278,6 +274,27 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+## `kombi test [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ kombi test [FILE] [-n <value>] [-f]
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ kombi test
+```
+
+_See code: [dist/commands/test.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.4-beta/dist/commands/test.ts)_
 <!-- commandsstop -->
 
 - [`kombi hello PERSON`](#kombi-hello-person)
