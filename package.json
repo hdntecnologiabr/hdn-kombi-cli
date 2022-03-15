@@ -1,5 +1,5 @@
 {
-  "name": "kombi",
+  "name": "hdn-kombi-cli",
   "version": "0.0.3-beta",
   "description": "Kombi CLI",
   "author": "HDN DIgital",
@@ -21,7 +21,7 @@
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "yarn lint",
-    "prepack": "yarn build && oclif manifest && oclif readme",
+    "prepack": "oclif manifest && oclif readme",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md",
     "kombi": "./bin/run"
@@ -31,20 +31,24 @@
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.0.1",
     "chalk": "^5.0.0",
+    "degit": "^2.8.4",
     "fs-extra": "^10.0.1",
     "inquirer": "^8.2.0",
     "ncp": "^2.0.0",
-    "require-dir": "^1.2.0"
+    "require-dir": "^1.2.0",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@oclif/test": "^2",
     "@types/chai": "^4",
+    "@types/degit": "^2.8.3",
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^8.2.0",
     "@types/mocha": "^9.0.0",
     "@types/ncp": "^2.0.5",
     "@types/node": "^16.9.4",
     "@types/require-dir": "^1.0.2",
+    "@types/shelljs": "^0.8.11",
     "chai": "^4",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4",

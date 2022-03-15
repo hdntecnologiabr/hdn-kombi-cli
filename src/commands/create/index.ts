@@ -1,8 +1,13 @@
 import {Command} from '@oclif/core'
 import * as inquirer from 'inquirer'
-import CreateReact from './react'
+import CreateDotnetIndex from './dotnet'
+import CreateReactIndex from './react'
 
 type LanguageType = 'React' | '.Net'
+
+interface PromptResponse {
+  language?: LanguageType
+}
 
 export default class CreateIndex extends Command {
   static description = 'describe the command here'
@@ -16,15 +21,22 @@ export default class CreateIndex extends Command {
   static args = []
 
   public async run(): Promise<void> {
-    const {language}: { language: LanguageType } = await inquirer.prompt([{
+    const {language} = await inquirer.prompt<PromptResponse>([{
       type: 'list',
       name: 'language',
       message: 'Select language',
       choices: [{name: 'React'}, {name: '.Net'}],
     }])
 
-    if (language === 'React') {
-      CreateReact.run()
+    switch (language) {
+    case 'React':
+      CreateReactIndex.run()
+      break
+    case '.Net':
+      CreateDotnetIndex.run()
+      break
+    default:
+      break
     }
   }
 }

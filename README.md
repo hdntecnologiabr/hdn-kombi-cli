@@ -16,11 +16,11 @@ Kombi CLI
 
 <!-- usage -->
 ```sh-session
-$ npm install -g kombi
+$ npm install -g hdn-kombi-cli
 $ kombi COMMAND
 running command...
 $ kombi (--version)
-kombi/0.0.3-beta win32-x64 node-v16.13.2
+hdn-kombi-cli/0.0.3-beta win32-x64 node-v16.13.2
 $ kombi --help [COMMAND]
 USAGE
   $ kombi COMMAND

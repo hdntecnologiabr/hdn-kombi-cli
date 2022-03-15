@@ -1,7 +1,12 @@
-
-import {Command} from '@oclif/core'
+import {CliUx, Command} from '@oclif/core'
+import * as degit from 'degit'
 import * as inquirer from 'inquirer'
-import * as fs from 'fs-extra'
+// import path = require('path')
+
+interface PromptResponse {
+  orgName?: string
+  mfeName?: string
+}
 
 export default class CreateReactIndex extends Command {
   static description = 'describe the command here'
@@ -14,17 +19,8 @@ export default class CreateReactIndex extends Command {
 
   static args = []
 
-  private async copyFiles(folderName: string) {
-    try {
-      await fs.copy('./src/generators/frontend/mfe/templates', `./${folderName}`)
-      this.log('success!')
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   public async run(): Promise<void> {
-    const responses: any = await inquirer.prompt([{
+    const {orgName, mfeName} = await inquirer.prompt<PromptResponse>([{
       type: 'input',
       name: 'orgName',
       message: 'Organization name [namespace] (customer-portal, another-portal, etc)',
@@ -44,9 +40,16 @@ export default class CreateReactIndex extends Command {
       type: 'confirm',
       name: 'hasApi',
       message: 'Will use API calls',
+    },
+    {
+      type: '',
+      name: 'dadComponent',
+      message: 'Which route? ',
     }])
 
-    await this.copyFiles(`${responses.orgName}-${responses.mfeName}`)
+    CliUx.ux.action.start(CreateReactIndex.description)
+    const emitter = degit('vitejs/vite/packages/create-vite/template-react-ts')
+    await emitter.clone(`${orgName}-${mfeName}`)
+    CliUx.ux.action.stop()
   }
 }
-
