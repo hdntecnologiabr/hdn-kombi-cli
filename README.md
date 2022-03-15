@@ -44,9 +44,8 @@ USAGE
 
 <!-- commands -->
 * [`kombi create`](#kombi-create)
-* [`kombi create react mfe`](#kombi-create-react-mfe)
-* [`kombi hello PERSON`](#kombi-hello-person)
-* [`kombi hello world`](#kombi-hello-world)
+* [`kombi create dotnet [FILE]`](#kombi-create-dotnet-file)
+* [`kombi create react`](#kombi-create-react)
 * [`kombi help [COMMAND]`](#kombi-help-command)
 * [`kombi plugins`](#kombi-plugins)
 * [`kombi plugins:inspect PLUGIN...`](#kombi-pluginsinspect-plugin)
@@ -72,59 +71,38 @@ EXAMPLES
 
 _See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.3-beta/dist/commands/create/index.ts)_
 
-## `kombi create react mfe`
+## `kombi create dotnet [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ kombi create react mfe
+  $ kombi create dotnet [FILE] [-n <value>] [-f]
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
 
 DESCRIPTION
   describe the command here
 
 EXAMPLES
-  $ kombi create react mfe
+  $ kombi create dotnet
 ```
 
-## `kombi hello PERSON`
+## `kombi create react`
 
-Say hello
-
-```
-USAGE
-  $ kombi hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Whom is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.3-beta/dist/commands/hello/index.ts)_
-
-## `kombi hello world`
-
-Say hello world
+describe the command here
 
 ```
 USAGE
-  $ kombi hello world
+  $ kombi create react
 
 DESCRIPTION
-  Say hello world
+  describe the command here
 
 EXAMPLES
-  $ oex hello world
-  hello world! (./src/commands/hello/world.ts)
+  $ kombi create react
 ```
 
 ## `kombi help [COMMAND]`
