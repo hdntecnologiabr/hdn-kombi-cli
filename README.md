@@ -56,17 +56,25 @@ USAGE
 
 ## `kombi create`
 
-describe the command here
+Scaffolding your HDN project
 
 ```
 USAGE
-  $ kombi create
+  $ kombi create [-h] [-t react|.net]
+
+FLAGS
+  -h, --help               Show CLI help.
+  -t, --type=(react|.net)  language type to create
 
 DESCRIPTION
-  describe the command here
+  Scaffolding your HDN project
 
 EXAMPLES
   $ kombi create
+
+  $ kombi create -t react
+
+  $ kombi create -t .net
 ```
 
 _See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.3-beta/dist/commands/create/index.ts)_
@@ -92,14 +100,14 @@ EXAMPLES
 
 ## `kombi create react`
 
-describe the command here
+Scaffolding your React project
 
 ```
 USAGE
   $ kombi create react
 
 DESCRIPTION
-  describe the command here
+  Scaffolding your React project
 
 EXAMPLES
   $ kombi create react
