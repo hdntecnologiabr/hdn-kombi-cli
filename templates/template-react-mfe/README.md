@@ -1,4 +1,4 @@
-# <%= fullMfeName %>
+# <%= fullName %>
 
 # Introduction
 

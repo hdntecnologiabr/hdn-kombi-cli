@@ -18,7 +18,7 @@
           "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
           "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
           "@<%= orgName %>/root-config": "/<%= orgName %>-root-config.js",
-          "<%= fullMfeName %>": "/mf/<%= normalizedMfeName %>/<%= normalizedMfeName %>.js"
+          "<%= fullName %>": "/mf/<%= normalizedMfeName %>/<%= normalizedMfeName %>.js"
         }
       }
     </script>
@@ -51,7 +51,7 @@
   <body>
     <template id="single-spa-layout">
       <single-spa-router>
-        <application name="<%= fullMfeName %>"></application>
+        <application name="<%= fullName %>"></application>
       </single-spa-router>
     </template>
     <noscript> You need to enable JavaScript to run this app. </noscript>

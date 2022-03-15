@@ -1,5 +1,5 @@
 {
-  "name": "<%= fullMfeName %>",
+  "name": "<%= fullName %>",
   "version": "1.0.0",
   "main": "index.pug",
   "license": "UNLICENSED",

@@ -25,7 +25,7 @@ export default class CreateIndex extends Command {
       type: 'list',
       name: 'language',
       message: 'Select language',
-      choices: [{name: 'React'}, {name: '.Net'}],
+      choices: ['React', '.Net'],
     }])
 
     switch (language) {

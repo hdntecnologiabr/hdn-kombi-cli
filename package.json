@@ -17,7 +17,7 @@
     "/oclif.manifest.json"
   ],
   "scripts": {
-    "build": "shx rm -rf dist && tsc",
+    "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "yarn lint",
@@ -35,6 +35,7 @@
     "fs-extra": "^10.0.1",
     "inquirer": "^8.2.0",
     "ncp": "^2.0.0",
+    "replace-in-file": "^6.3.2",
     "require-dir": "^1.2.0",
     "shelljs": "^0.8.5"
   },
