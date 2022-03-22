@@ -39,9 +39,12 @@ export default class CreateReact extends Command {
     CliUx.ux.action.start('Install')
 
     exec(`cd ${dest} && git init`)
-    exec(`cd ${dest} && yarn install`)
 
     CliUx.ux.action.stop()
+
+    this.log('Done. Now run:')
+    this.log(`cd ${dest}`)
+    this.log('yarn')
   }
 
   private async doPrompt() {
