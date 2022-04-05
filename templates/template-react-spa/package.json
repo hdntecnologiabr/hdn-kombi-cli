@@ -36,7 +36,6 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.1.6",
-    "@types/single-spa-react": "^2.8.3",
     "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
@@ -67,14 +66,10 @@
     "pretty-quick": "^3.1.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-config-single-spa-react": "^4.0.0",
-    "webpack-config-single-spa-react-ts": "^4.0.0",
-    "webpack-config-single-spa-ts": "^4.0.0",
     "webpack-dev-server": "^4.0.0",
     "webpack-merge": "^5.8.0",
     "ts-jest": "^27.0.0",
-    "typescript": "^4.3.5",
-    "ts-config-single-spa": "^3.0.0"
+    "typescript": "^4.3.5"
   },
   "jestSonar": {
     "reportPath": "reports",

@@ -1,6 +1,0 @@
-apiVersion: v1
-name: <%= normalizedMfeName %>
-version: 0.0.0 # overwritten by build
-sources:
-  - https://dev.azure.com/hdndigital/<%= normalizedMfeName %>
-appVersion: 0.0.0 # overwritten by build

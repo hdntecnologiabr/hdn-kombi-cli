@@ -27,7 +27,7 @@ export default class CreateReact extends Command {
     const {orgName, projectName, projectType} = await this.doPrompt()
 
     const src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
-    const dest = `${orgName}-${projectName}`
+    const dest = projectType === 'spa' ? `${projectName}` : `${orgName}-${projectName}`
 
     CliUx.ux.action.start('Create')
 
@@ -48,26 +48,29 @@ export default class CreateReact extends Command {
   }
 
   private async doPrompt() {
-    return inquirer.prompt<PromptResponse>([{
-      type: 'input',
-      name: 'orgName',
-      message: 'Organization name [namespace] (hdn, hdn-labs, etc...)',
-      default: 'hdn',
-    },
-    {
-      type: 'list',
-      name: 'projectType',
-      message: 'Project type (single-page or micro-frontend)',
-      choices: ['spa', 'mfe'],
-    },
-    {
-      type: 'input',
-      name: 'projectName',
-      message: ({projectType}) => projectType === 'mfe' ?
-        'Microfrontend name (reward-auth-mfe, one-management-mfe, etc...)' :
-        'Project name (reward, one, etc...)',
-      default: 'react-app',
-    }])
+    return inquirer.prompt<PromptResponse>([
+      {
+        type: 'list',
+        name: 'projectType',
+        message: 'Project type (single-page or micro-frontend)',
+        choices: ['spa', 'mfe'],
+      },
+      {
+        when: answers => answers.projectType === 'mfe',
+        type: 'input',
+        name: 'orgName',
+        message: 'Organization name [namespace] (customer-portal, hdn-labs, etc...)',
+        default: 'hdn',
+      },
+      {
+        type: 'input',
+        name: 'projectName',
+        message: ({projectType}) => projectType === 'mfe' ?
+          'Microfrontend name (reward-auth-mfe, one-management-mfe, etc...)' :
+          'Project name (rewards, one, etc...)',
+        default: 'react-app',
+      },
+    ])
   }
 
   private replaceName(dest: string) {

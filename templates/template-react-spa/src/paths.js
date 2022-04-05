@@ -10,5 +10,5 @@ const distDir = resolveApp('dist');
 module.exports = {
   srcDir,
   distDir,
-  entryFileDev: path.join(srcDir, 'index.dev.ts'),
+  entryFileDev: path.join(srcDir, 'index.dev.tsx'),
 };
