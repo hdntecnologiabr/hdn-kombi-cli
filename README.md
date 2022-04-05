@@ -21,19 +21,7 @@ $ npm install -g kombi-cli
 $ kombi COMMAND
 running command...
 $ kombi (--version)
-kombi-cli/0.0.6-beta win32-x64 node-v16.13.1
-$ kombi --help [COMMAND]
-USAGE
-  $ kombi COMMAND
-...
-```
-<!-- usagestop -->
-```sh-session
-$ npm install -g hdn-kombi-cli
-$ kombi COMMAND
-running command...
-$ kombi (--version)
-hdn-kombi-cli/0.0.5-beta win32-x64 node-v16.14.0
+kombi-cli/0.0.7-beta linux-x64 node-v16.14.0
 $ kombi --help [COMMAND]
 USAGE
   $ kombi COMMAND
@@ -56,9 +44,6 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`kombi create`](#kombi-create)
-* [`kombi create dotnet`](#kombi-create-dotnet)
-* [`kombi create react`](#kombi-create-react)
 * [`kombi help [COMMAND]`](#kombi-help-command)
 * [`kombi plugins`](#kombi-plugins)
 * [`kombi plugins:install PLUGIN...`](#kombi-pluginsinstall-plugin)
@@ -69,60 +54,6 @@ USAGE
 * [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin-1)
 * [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin-2)
 * [`kombi plugins update`](#kombi-plugins-update)
-
-## `kombi create`
-
-Scaffolding your HDN project
-
-```
-USAGE
-  $ kombi create [-t react|dotnet]
-
-FLAGS
-  -t, --type=(react|dotnet)  Language type to create
-
-DESCRIPTION
-  Scaffolding your HDN project
-
-EXAMPLES
-  $ kombi create
-
-  $ kombi create -t react
-
-  $ kombi create -t dotnet
-```
-
-_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.6-beta/dist/commands/create/index.ts)_
-
-## `kombi create dotnet`
-
-Scaffolding your .Net project
-
-```
-USAGE
-  $ kombi create dotnet
-
-DESCRIPTION
-  Scaffolding your .Net project
-
-EXAMPLES
-  $ kombi create dotnet
-```
-
-## `kombi create react`
-
-Scaffolding your React project
-
-```
-USAGE
-  $ kombi create react
-
-DESCRIPTION
-  Scaffolding your React project
-
-EXAMPLES
-  $ kombi create react
-```
 
 ## `kombi help [COMMAND]`
 
