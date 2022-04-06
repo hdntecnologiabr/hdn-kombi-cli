@@ -39,7 +39,6 @@ module.exports = {
     '\\.(svg)$': '<rootDir>/config/mocks/fileMock.ts',
     '\\.(css)$': '<rootDir>/config/mocks/styleMock.ts',
   },
-  testResultsProcessor: 'jest-sonar-reporter',
   reporters: [
     'default',
     [
