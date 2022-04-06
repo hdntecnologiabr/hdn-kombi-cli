@@ -1,11 +1,7 @@
 {
   "name": "<%= fullName %>",
   "version": "1.0.0",
-  "main": "index.pug",
   "license": "UNLICENSED",
-  "generator": {
-    "version": "<%= generator.version %>"
-  },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -16,23 +12,27 @@
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.4.3",
+    "axios": "^0.26.1",
     "effector": "^20.11.5",
     "effector-react": "^20.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.24.6",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@types/node": "^14.14.5",
     "@babel/eslint-parser": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
-    "@babel/preset-typescript": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@types/axios": "^0.14.0",
+    "@types/enzyme": "^3.10.11",
     "@types/jest": "^27.0.1",
+    "@types/node": "^14.14.5",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.1.6",
@@ -44,11 +44,13 @@
     "babel-loader": "^8.1.0",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
+    "customize-cra": "^1.0.0",
     "enzyme": "^3.11.0",
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-ts-react-important-stuff": "^3.0.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-import-helpers": "^1.2.1",
@@ -61,20 +63,15 @@
     "jest": "^27.0.6",
     "jest-cli": "^27.0.6",
     "jest-junit": "^12.0.0",
-    "jest-sonar-reporter": "2.0.0",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
+    "react-app-rewired": "^2.2.1",
+    "ts-jest": "^27.0.0",
+    "typescript": "^4.3.5",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0",
-    "webpack-merge": "^5.8.0",
-    "ts-jest": "^27.0.0",
-    "typescript": "^4.3.5"
-  },
-  "jestSonar": {
-    "reportPath": "reports",
-    "reportFile": "jest-sonar-reporter.xml",
-    "indent": 4
+    "webpack-merge": "^5.8.0"
   },
   "browserslist": {
     "production": [

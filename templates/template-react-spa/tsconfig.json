@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.paths.json",
-  "include": ["src"],
+  "include": ["src", "config"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "ES2021",
     "lib": ["dom", "dom.iterable", "esnext", "ES2021"],
