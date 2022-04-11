@@ -1,4 +1,4 @@
-import Common from "./common";
+import { Common } from "./common";
 
 describe("common", () => {
   describe("camelCase function", () => {

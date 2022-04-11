@@ -3,7 +3,6 @@ import { HashRouter } from "react-router-dom";
 
 import { IntlProvider } from "./i18n";
 import Routes from "./Routes";
-
 import startServer from "./server";
 
 export default function App() {

@@ -5,8 +5,6 @@ const camelCase = (str: string): string =>
     )
     .replace(/\s+/g, "");
 
-const Common = {
+export const Common = {
   camelCase,
 };
-
-export default Common;

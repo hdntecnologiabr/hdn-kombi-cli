@@ -1,4 +1,4 @@
-const exampleRoutes = (context) => {
+const exampleRoutes = context => {
   context.get(`/api/example`, () => {
     return {
       ok: true,
