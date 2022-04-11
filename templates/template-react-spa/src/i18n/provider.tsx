@@ -1,16 +1,16 @@
-import React, { ReactNode } from 'react';
-import { IntlProvider as NativeProvider } from 'react-intl';
+import React, { ReactNode } from "react";
+import { IntlProvider as NativeProvider } from "react-intl";
 
-import MessageMap from './i18n.d';
-import enUS from './languages/en-US';
+import MessageMap from "./i18n.d";
+import enUS from "./languages/en-US";
 
-const DEFAULT_LANGUAGE = 'en-US';
+const DEFAULT_LANGUAGE = "en-US";
 type IIntlProvider = {
   children: ReactNode;
 };
 
 export const messages: { [language: string]: MessageMap } = {
-  'en-US': enUS,
+  "en-US": enUS,
 };
 
 export function IntlProvider({ children }: IIntlProvider): JSX.Element {
@@ -30,7 +30,7 @@ export const flattenObject = (ob: any): any => {
   const toReturn: { [key: string]: any } = {};
 
   for (const i in ob) {
-    if (typeof ob[i] === 'object' && ob[i] !== null) {
+    if (typeof ob[i] === "object" && ob[i] !== null) {
       const flatObject = flattenObject(ob[i]);
       // eslint-disable-next-line guard-for-in
       for (const x in flatObject) {

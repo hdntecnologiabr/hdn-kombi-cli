@@ -1,7 +1,7 @@
-import React, { lazy, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { lazy, Suspense } from "react";
+import { Route, Switch } from "react-router-dom";
 
-const ExamplePage = lazy(() => import('./pages/ExamplePage/ExamplePage'));
+const ExamplePage = lazy(() => import("./pages/ExamplePage/ExamplePage"));
 
 const Routes = (): JSX.Element => {
   return (

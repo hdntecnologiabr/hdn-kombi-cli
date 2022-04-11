@@ -1,7 +1,7 @@
-import { createStore } from 'effector';
+import { createStore } from "effector";
 
-import { loadExample, loadExampleDone, loadExampleFail } from './ExampleEvents';
-import { ExampleState } from './ExampleState';
+import { loadExample, loadExampleDone, loadExampleFail } from "./ExampleEvents";
+import { ExampleState } from "./ExampleState";
 
 const initialState: ExampleState = {
   isLoading: false,

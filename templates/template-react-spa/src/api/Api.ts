@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Axios from 'axios';
+import Axios from "axios";
 
-import { getApiHost } from '../services/host/HostService';
+import { getApiHost } from "../services/host/HostService";
 
 export interface IRequest {
   url: string;

@@ -1,5 +1,5 @@
 const example = (context) => {
-  context.createList('test', 9);
+  context.createList("test", 9);
 };
 
 export default example;

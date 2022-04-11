@@ -1,4 +1,4 @@
-import { Factory } from 'miragejs';
+import { Factory } from "miragejs";
 
 const test = Factory.extend({
   name(i) {
