@@ -1,4 +1,4 @@
-import { Model } from 'miragejs';
+import { Model } from "miragejs";
 
 const test = Model.extend({});
 

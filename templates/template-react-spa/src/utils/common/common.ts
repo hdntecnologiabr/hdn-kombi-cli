@@ -3,7 +3,7 @@ const camelCase = (str: string): string =>
     .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
       index === 0 ? word.toLowerCase() : word.toUpperCase(),
     )
-    .replace(/\s+/g, '');
+    .replace(/\s+/g, "");
 
 const Common = {
   camelCase,

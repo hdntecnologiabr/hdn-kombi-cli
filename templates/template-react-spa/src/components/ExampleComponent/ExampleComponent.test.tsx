@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
+import { shallow } from "enzyme";
 
-import ExampleComponent from './ExampleComponent';
-import ExampleComponentView from './ExampleComponentView';
+import ExampleComponent from "./ExampleComponent";
+import ExampleComponentView from "./ExampleComponentView";
 
-describe('ExampleComponent', () => {
-  it('should render correctly', () => {
+describe("ExampleComponent", () => {
+  it("should render correctly", () => {
     const wrapper = shallow(<ExampleComponent />);
     expect(wrapper.type()).toBe(ExampleComponentView);
   });

@@ -1,17 +1,18 @@
-import { createServer, ActiveModelSerializer } from 'miragejs';
+import { createServer, ActiveModelSerializer } from "miragejs";
 
-import Common from '../src/utils/common';
+import Common from "../utils/common";
 
-import exampleFactory from './factories/exampleFactory';
+import exampleFactory from "./factories/exampleFactory";
 
-import exampleModel from './models/exampleModel';
+import exampleModel from "./models/exampleModel";
 
-import exampleRoutes from './routes/exampleRoutes';
+import exampleRoutes from "./routes/exampleRoutes";
 
-import exampleSeed from './seeds/exampleSeed';
+import exampleSeed from "./seeds/exampleSeed";
 
-const startServer = ({ environment = 'development' } = {}) => {
-  console.log('Starting MirageJS server.');
+const startServer = ({ environment = "development" } = {}) => {
+  // eslint-disable-next-line no-console
+  console.log("Starting MirageJS server.");
 
   const server = createServer({
     environment,

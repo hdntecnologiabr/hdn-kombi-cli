@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Box } from './ExampleComponent.style';
+import { Box } from "./ExampleComponent.style";
 
 function ExampleComponentView(): JSX.Element {
   return (
