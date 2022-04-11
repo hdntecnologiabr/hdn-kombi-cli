@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExamplePage = (): JSX.Element => {
+function ExamplePage(): JSX.Element {
   return (
     <div>
       <div>It works!</div>
@@ -9,6 +9,6 @@ const ExamplePage = (): JSX.Element => {
       </pre>
     </div>
   );
-};
+}
 
 export default ExamplePage;

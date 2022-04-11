@@ -1,4 +1,4 @@
-const example = (context) => {
+const example = context => {
   context.createList("test", 9);
 };
 

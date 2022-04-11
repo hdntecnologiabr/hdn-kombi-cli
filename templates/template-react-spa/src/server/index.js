@@ -1,13 +1,9 @@
 import { createServer, ActiveModelSerializer } from "miragejs";
 
-import Common from "../utils/common";
-
+import { Common } from "../utils/common";
 import exampleFactory from "./factories/exampleFactory";
-
 import exampleModel from "./models/exampleModel";
-
 import exampleRoutes from "./routes/exampleRoutes";
-
 import exampleSeed from "./seeds/exampleSeed";
 
 const startServer = ({ environment = "development" } = {}) => {

@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 const ExamplePage = lazy(() => import("./pages/ExamplePage/ExamplePage"));
 
-const Routes = (): JSX.Element => {
+function Routes(): JSX.Element {
   return (
     <Suspense fallback={<span>Loading ...</span>}>
       <Switch>
@@ -11,5 +11,5 @@ const Routes = (): JSX.Element => {
       </Switch>
     </Suspense>
   );
-};
+}
 export default Routes;
