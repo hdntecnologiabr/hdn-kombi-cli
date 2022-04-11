@@ -21,7 +21,7 @@ $ npm install -g kombi-cli
 $ kombi COMMAND
 running command...
 $ kombi (--version)
-kombi-cli/0.0.10-beta linux-x64 node-v16.14.0
+kombi-cli/0.0.11-beta linux-x64 node-v16.14.0
 $ kombi --help [COMMAND]
 USAGE
   $ kombi COMMAND
@@ -80,7 +80,7 @@ EXAMPLES
   $ kombi create -t dotnet
 ```
 
-_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.10-beta/dist/commands/create/index.ts)_
+_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.11-beta/dist/commands/create/index.ts)_
 
 ## `kombi create dotnet`
 
