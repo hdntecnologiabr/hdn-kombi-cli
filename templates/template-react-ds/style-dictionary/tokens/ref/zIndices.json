@@ -1,0 +1,42 @@
+{
+  "zIndices": {
+    "ref": {
+      "deep": {
+        "value": "-999999"
+      },
+      "default": {
+        "value": "1"
+      },
+      "masked": {
+        "value": "100"
+      },
+      "mask": {
+        "value": "200"
+      },
+      "sticky": {
+        "value": "300"
+      },
+      "header": {
+        "value": "400"
+      },
+      "dropdown": {
+        "value": "500"
+      },
+      "overlay": {
+        "value": "600"
+      },
+      "modal": {
+        "value": "700"
+      },
+      "popup": {
+        "value": "800"
+      },
+      "toast": {
+        "value": "900"
+      },
+      "spinner": {
+        "value": "999"
+      }
+    }
+  }
+}

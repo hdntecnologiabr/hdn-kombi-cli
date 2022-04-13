@@ -1,0 +1,36 @@
+{
+  "include": ["packages", "config", "style_dictionary", "**/*.ts"],
+  "exclude": ["node_modules", "**/node_modules/**", "**/dist/**", "types/emotion.d.ts"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "jsx": "react",
+    // build ts to js
+    "outDir": "dist",
+    "baseUrl": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "paths": {
+      // required to prevent transient dependency warnings
+      "@stitches/core": ["node_modules/@stitches/core"],
+      "@stitches/react": ["node_modules/@stitches/react"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}

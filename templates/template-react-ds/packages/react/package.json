@@ -1,0 +1,46 @@
+{
+  "name": "@<%= fullName %>/react",
+  "version": "0.0.25",
+  "description": "Accessible, composable React UI components built with Stitches.js",
+  "keywords": [
+    "react",
+    "ui",
+    "<%= fullName %>",
+    "design-system",
+    "component-library",
+    "accessible",
+    "stitches",
+    "radix-ui"
+  ],
+  "author": "HDN <email@hdn.digital>",
+  "homepage": "",
+  "license": "MIT",
+  "source": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup index.ts --format cjs --dts --external core",
+    "dev": "tsup index.ts --format cjs --watch --dts --external core",
+    "clean": "rimraf node_modules dist"
+  },
+  "dependencies": {
+    "@<%= fullName %>/styles": "0.0.22",
+    "@<%= fullName %>/utils": "0.0.8",
+    "@<%= fullName %>/web": "0.0.19",
+    "@react-aria/button": "^3.3.4",
+    "@react-aria/utils": "^3.11.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "tsup": "^5.11.7"
+  }
+}
