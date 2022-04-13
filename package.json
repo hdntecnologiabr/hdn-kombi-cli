@@ -1,6 +1,6 @@
 {
   "name": "kombi-cli",
-  "version": "0.0.11-beta",
+  "version": "0.0.12-beta",
   "description": "Kombi CLI",
   "author": "HDN DIgital",
   "bin": {
