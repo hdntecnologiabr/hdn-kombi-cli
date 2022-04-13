@@ -1,9 +1,9 @@
 import MessageMap from "../i18n.d";
 
 const enUS: MessageMap = {
-  test: {
-    translate: "Translate",
-    missing: "Only English option available",
+  TEST: {
+    TRANSLATE: "Translate",
+    MISSING: "Only English option available",
   },
 };
 

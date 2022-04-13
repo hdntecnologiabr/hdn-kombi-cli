@@ -4,19 +4,19 @@ import { IntlProvider as NativeProvider } from "react-intl";
 import MessageMap from "./i18n.d";
 import enUS from "./languages/en-US";
 
-const DEFAULT_LANGUAGE = "en-US";
 type IIntlProvider = {
   children: ReactNode;
 };
 
-export const messages: { [language: string]: MessageMap } = {
-  "en-US": enUS,
+const DEFAULT_LANGUAGE = "en-US";
+const MESSAGES: { [language: string]: MessageMap } = {
+  enUS,
 };
 
 export function IntlProvider({ children }: IIntlProvider): JSX.Element {
   const locale = DEFAULT_LANGUAGE;
 
-  const mergedMessages = mergeMessages(messages, locale);
+  const mergedMessages = mergeMessages(MESSAGES, locale.replace("-", ""));
 
   return (
     <NativeProvider locale={locale} defaultLocale={DEFAULT_LANGUAGE} messages={mergedMessages}>
@@ -26,7 +26,7 @@ export function IntlProvider({ children }: IIntlProvider): JSX.Element {
 }
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any */
-export const flattenObject = (ob: any): any => {
+const flattenObject = (ob: any): any => {
   const toReturn: { [key: string]: any } = {};
 
   for (const i in ob) {
@@ -44,7 +44,7 @@ export const flattenObject = (ob: any): any => {
 };
 /* eslint-enable */
 
-export const mergeMessages = (messagesInput: MessageMap, selectedLocale: string): any => {
+const mergeMessages = (messagesInput: MessageMap, selectedLocale: string): any => {
   const defaultMessages = flattenObject(messagesInput[DEFAULT_LANGUAGE]);
   const localeMessages = flattenObject(messagesInput[selectedLocale]);
   return { ...defaultMessages, ...localeMessages };
