@@ -35,7 +35,7 @@ export default class CreateReact extends Command {
     await emitter.clone(dest)
 
     if (projectType === 'spa') this.replaceName(dest)
-    else this.replaceNameMFE(dest, orgName, projectName)
+    else this.replaceNameMFE(dest, orgName || '', projectName || '')
 
     CliUx.ux.action.start('Install')
 
