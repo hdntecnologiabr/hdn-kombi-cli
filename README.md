@@ -22,7 +22,7 @@ $ npm install -g kombi-cli
 $ kombi COMMAND
 running command...
 $ kombi (--version)
-kombi-cli/0.0.12-beta linux-x64 node-v16.14.0
+kombi-cli/0.0.13-beta linux-x64 node-v16.14.0
 $ kombi --help [COMMAND]
 USAGE
   $ kombi COMMAND

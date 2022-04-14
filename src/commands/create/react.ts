@@ -32,8 +32,8 @@ export default class CreateReact extends Command {
     const emitter = degit(src)
     await emitter.clone(dest)
 
-    if (projectType === 'spa') this.replaceName(dest)
-    else this.replaceNameMFE(dest, orgName || '', projectName || '')
+    if (projectType === 'mfe' && orgName && projectName) this.replaceNameMFE(dest, orgName, projectName)
+    else this.replaceName(dest)
 
     CliUx.ux.action.start('Install')
 
@@ -82,18 +82,29 @@ export default class CreateReact extends Command {
 
   private replaceName(dest: string) {
     replaceInFileSync({
-      files: [`${dest}/index.html`, `${dest}/package.json`, `${dest}/README.md`],
+      files: [
+        `${dest}/public/index.html`,
+        `${dest}/package.json`,
+        `${dest}/README.md`,
+      ],
       from: '<%= fullName %>',
       to: dest,
     })
   }
 
-  private replaceNameMFE(dest: string, orgName: string, projectName: string) {
+  private replaceNameMFE(dest: string, orgName: string, mfeName: string) {
     replaceInFileSync({
       files: [
         `${dest}/*`,
       ],
       from: '<%= fullName %>',
+      to: `@${orgName}/${mfeName}`,
+    })
+    replaceInFileSync({
+      files: [
+        `${dest}/*`,
+      ],
+      from: '<%= normalizedMfeName %>',
       to: dest,
     })
     replaceInFileSync({
@@ -108,7 +119,7 @@ export default class CreateReact extends Command {
         `${dest}/*`,
       ],
       from: '<%= mfeName %>',
-      to: projectName,
+      to: mfeName,
     })
   }
 }
