@@ -1,0 +1,13 @@
+import * as React from "react"
+
+import { shallow } from "enzyme";
+
+import { {{capitalize componentName}} } from ".";
+
+describe("{{capitalize componentName}}", () => {
+  it("should render correctly", async () => {
+    const wrapper = shallow(<{{capitalize componentName}} />);
+
+    expect(wrapper.find("{{capitalize componentName}}").length).toBe(1);
+  });
+});

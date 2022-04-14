@@ -1,0 +1,122 @@
+/**
+  * @tokens Scales
+  * @presenter Animation
+  */
+
+$<%= prefix %>-scale-ref-5: scale-5 1.5s alternate infinite ease-in; /* scale(1.05) */
+$<%= prefix %>-scale-ref-25: scale-25 1.5s alternate infinite ease-in; /* scale(1.25) */
+$<%= prefix %>-scale-ref-50: scale-50 1.5s alternate infinite ease-in; /* scale(1.50) */
+
+/**
+  * @tokens Velocity
+  * @presenter Animation
+  */
+
+$<%= prefix %>-transitionDuration-ref-1: scale-50 0.1s alternate infinite ease-in; /* 0.1s */
+$<%= prefix %>-transitionDuration-ref-25: scale-50 0.25s alternate infinite ease-in; /* 0.25s */
+$<%= prefix %>-transitionDuration-ref-50: scale-50 0.5s alternate infinite ease-in; /* 0.5s */
+$<%= prefix %>-transitionDuration-ref-100: scale-50 1s alternate infinite ease-in; /* 1s */
+
+/**
+  * @tokens Timing Function
+  * @presenter Easing
+  */
+
+$<%= prefix %>-transitionTimingFunction-ref-linear: cubic-bezier(0, 0, 0, 0);
+$<%= prefix %>-transitionTimingFunction-ref-in: cubic-bezier(0.48, 0, 1, 1);
+$<%= prefix %>-transitionTimingFunction-ref-out: cubic-bezier(0, 0, 0.48, 1);
+$<%= prefix %>-transitionTimingFunction-ref-in-and-out: cubic-bezier(0.48, 0, 0.48, 1);
+
+/**
+  * @tokens Rotations
+  * @presenter Animation
+  */
+
+$<%= prefix %>-rotation-ref-quarter: rotation-quarter 2s alternate infinite ease-in; /* rotate(90deg) */
+$<%= prefix %>-rotation-ref-half: rotation-half 2s alternate infinite ease-in; /* rotate(180deg) */
+$<%= prefix %>-rotation-ref-full: rotation-full 2s alternate infinite ease-in; /* rotate(360deg) */
+
+$<%= prefix %>-rotation-ref-inverse-quarter: rotation-inverse-quarter 2s alternate infinite ease-in; /* rotate(-90deg) */
+$<%= prefix %>-rotation-ref-inverse-half: rotation-inverse-half 2s alternate infinite ease-in; /* rotate(-180deg) */
+$<%= prefix %>-rotation-ref-inverse-full: rotation-inverse-full 2s alternate infinite ease-in; /* rotate(-360deg) */
+
+@keyframes scale-5 {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0.55);
+  }
+}
+
+@keyframes scale-25 {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+@keyframes scale-50 {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotation-quarter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rotation-half {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotation-full {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation-inverse-quarter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotation-inverse-half {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes rotation-inverse-full {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

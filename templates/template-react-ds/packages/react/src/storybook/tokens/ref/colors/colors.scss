@@ -1,0 +1,117 @@
+/**
+  * @tokens Colors
+  * @presenter Color
+  */
+
+$<%= prefix %>-colors-ref-edenred-red-10: #400702;
+$<%= prefix %>-colors-ref-edenred-red-20: #710c04;
+$<%= prefix %>-colors-ref-edenred-red-30: #a31106;
+$<%= prefix %>-colors-ref-edenred-red-40: #d41607;
+$<%= prefix %>-colors-ref-edenred-red-50: #f72717;
+$<%= prefix %>-colors-ref-edenred-red-60: #f95549;
+$<%= prefix %>-colors-ref-edenred-red-70: #fa837a;
+$<%= prefix %>-colors-ref-edenred-red-80: #fcb1ab;
+$<%= prefix %>-colors-ref-edenred-red-90: #fdd1ce;
+$<%= prefix %>-colors-ref-edenred-red-95: #fee8e6;
+$<%= prefix %>-colors-ref-edenred-red-98: #fff6f5;
+$<%= prefix %>-colors-ref-edenred-cold-white: #f1f7ff;
+
+// Bright Colors - Pink
+$<%= prefix %>-colors-ref-bright-pink-50: #ff5971;
+$<%= prefix %>-colors-ref-bright-pink-60: #ffbdc9;
+$<%= prefix %>-colors-ref-bright-pink-70: #ffcdd7;
+$<%= prefix %>-colors-ref-bright-pink-80: #ffdee4;
+$<%= prefix %>-colors-ref-bright-pink-90: #ffeef1;
+$<%= prefix %>-colors-ref-bright-pink-95: #fff7f8;
+
+// Bright Colors - Cobalt
+$<%= prefix %>-colors-ref-bright-cobalt-50: #0d8aff;
+$<%= prefix %>-colors-ref-bright-cobalt-60: #a0d1fd;
+$<%= prefix %>-colors-ref-bright-cobalt-70: #b8ddfe;
+$<%= prefix %>-colors-ref-bright-cobalt-80: #d0e9fe;
+$<%= prefix %>-colors-ref-bright-cobalt-90: #e8f3ff;
+$<%= prefix %>-colors-ref-bright-cobalt-95: #f3f9ff;
+
+// Bright Colors - Violet
+$<%= prefix %>-colors-ref-bright-violet-50: #711cff;
+$<%= prefix %>-colors-ref-bright-violet-60: #c6a7fd;
+$<%= prefix %>-colors-ref-bright-violet-70: #d5bdfd;
+$<%= prefix %>-colors-ref-bright-violet-80: #e3d3fe;
+$<%= prefix %>-colors-ref-bright-violet-90: #f1e9ff;
+$<%= prefix %>-colors-ref-bright-violet-95: #f8f4ff;
+
+// Bright Colors - Mint
+$<%= prefix %>-colors-ref-bright-mint-50: #00a184;
+$<%= prefix %>-colors-ref-bright-mint-60: #9bdace;
+$<%= prefix %>-colors-ref-bright-mint-70: #b5e3da;
+$<%= prefix %>-colors-ref-bright-mint-80: #cdece6;
+$<%= prefix %>-colors-ref-bright-mint-90: #e7f6f3;
+$<%= prefix %>-colors-ref-bright-mint-95: #f2faf9;
+
+// Bright Colors - Olive
+$<%= prefix %>-colors-ref-bright-olive-60: #c8d69c;
+$<%= prefix %>-colors-ref-bright-olive-70: #d5e0b5;
+$<%= prefix %>-colors-ref-bright-olive-80: #f1f5e7;
+$<%= prefix %>-colors-ref-bright-olive-90: #dbe5c2;
+$<%= prefix %>-colors-ref-bright-olive-95: #f8faf3;
+
+// Light Colors - Pink
+$<%= prefix %>-colors-ref-light-pink-50: #fed0c8;
+$<%= prefix %>-colors-ref-light-pink-60: #ffece9;
+$<%= prefix %>-colors-ref-light-pink-70: #fff1ef;
+$<%= prefix %>-colors-ref-light-pink-80: #fff6f4;
+$<%= prefix %>-colors-ref-light-pink-90: #fff8f7;
+$<%= prefix %>-colors-ref-light-pink-95: #fffaf9;
+
+// Light Colors - Cobalt
+$<%= prefix %>-colors-ref-light-cobalt-50: #b0efff;
+$<%= prefix %>-colors-ref-light-cobalt-60: #d0f5ff;
+$<%= prefix %>-colors-ref-light-cobalt-70: #dff9ff;
+$<%= prefix %>-colors-ref-light-cobalt-80: #ebfbff;
+$<%= prefix %>-colors-ref-light-cobalt-90: #f3fdff;
+$<%= prefix %>-colors-ref-light-cobalt-95: #fbfeff;
+
+// Light Colors - Violet
+$<%= prefix %>-colors-ref-light-violet-50: #c8c3ff;
+$<%= prefix %>-colors-ref-light-violet-60: #dedbff;
+$<%= prefix %>-colors-ref-light-violet-70: #e6e4ff;
+$<%= prefix %>-colors-ref-light-violet-80: #efedff;
+$<%= prefix %>-colors-ref-light-violet-90: #f7f6ff;
+$<%= prefix %>-colors-ref-light-violet-95: #f9f9ff;
+
+// Light Colors - Mint
+$<%= prefix %>-colors-ref-light-mint-50: #98f6db;
+$<%= prefix %>-colors-ref-light-mint-60: #c1fae9;
+$<%= prefix %>-colors-ref-light-mint-70: #d1fbef;
+$<%= prefix %>-colors-ref-light-mint-80: #eafdf8;
+$<%= prefix %>-colors-ref-light-mint-90: #f1fefa;
+$<%= prefix %>-colors-ref-light-mint-95: #f8fefc;
+
+// Light Colors - Olvie
+$<%= prefix %>-colors-ref-light-olive-50: #dcf691;
+$<%= prefix %>-colors-ref-light-olive-60: #eafabd;
+$<%= prefix %>-colors-ref-light-olive-70: #effbcd;
+$<%= prefix %>-colors-ref-light-olive-80: #f8fde9;
+$<%= prefix %>-colors-ref-light-olive-90: #fbfef4;
+$<%= prefix %>-colors-ref-light-olive-95: #fdfff9;
+
+// Semantic Colors
+$<%= prefix %>-colors-ref-semantic-positive: #34bc6e;
+$<%= prefix %>-colors-ref-semantic-warning: #ff832b;
+$<%= prefix %>-colors-ref-semantic-negative: #da1e28;
+$<%= prefix %>-colors-ref-semantic-informative: #1473e6;
+
+// Neutral Colors
+$<%= prefix %>-colors-ref-neutral-0: #000000;
+$<%= prefix %>-colors-ref-neutral-5: #2e3238;
+$<%= prefix %>-colors-ref-neutral-10: #444b55;
+$<%= prefix %>-colors-ref-neutral-20: #5b6371;
+$<%= prefix %>-colors-ref-neutral-30: #6d7787;
+$<%= prefix %>-colors-ref-neutral-40: #8e96a4;
+$<%= prefix %>-colors-ref-neutral-50: #aab1bb;
+$<%= prefix %>-colors-ref-neutral-60: #b9bec5;
+$<%= prefix %>-colors-ref-neutral-70: #cfd3d8;
+$<%= prefix %>-colors-ref-neutral-80: #dbdde1;
+$<%= prefix %>-colors-ref-neutral-90: #f0f1f3;
+$<%= prefix %>-colors-ref-neutral-95: #f8f8f9;
+$<%= prefix %>-colors-ref-neutral-100: #ffffff;
