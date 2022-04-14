@@ -5,7 +5,7 @@ import { ExampleComponentProps } from './ExampleComponent.types';
 
 function ExampleComponent({ test }: ExampleComponentProps): JSX.Element {
   return (
-    <ExampleComponentView />
+    <ExampleComponentView test={test} />
   );
 }
 

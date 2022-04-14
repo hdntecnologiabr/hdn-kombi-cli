@@ -1,6 +1,6 @@
 {
   "extends": "ts-config-single-spa",
-  "files": ["src/<%= normalizedMfeName %>.tsx"],
+  "files": ["src/*"],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test*"],
   "compilerOptions": {
