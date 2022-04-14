@@ -1,10 +1,10 @@
-import {CliUx, Command} from '@oclif/core'
+import { CliUx, Command } from '@oclif/core'
 import * as inquirer from 'inquirer'
-import {replaceInFileSync} from 'replace-in-file'
-import {exec} from 'shelljs'
+import { replaceInFileSync } from 'replace-in-file'
+import { exec } from 'shelljs'
 import degit = require('degit')
 
-type ProjectType = 'spa' | 'mfe'
+type ProjectType = 'spa' | 'mfe' | 'ds'
 
 interface PromptResponse {
   orgName?: string
@@ -15,19 +15,17 @@ interface PromptResponse {
 export default class CreateReact extends Command {
   static description = 'Scaffolding your React project'
 
-  static examples = [
-    '$ kombi create react',
-  ]
+  static examples = ['$ kombi create react']
 
   static flags = {}
 
   static args = []
 
   public async run(): Promise<void> {
-    const {orgName, projectName, projectType} = await this.doPrompt()
+    const { orgName, projectName, projectType } = await this.doPrompt()
 
     const src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
-    const dest = projectType === 'spa' ? `${projectName}` : `${orgName}-${projectName}`
+    const dest = projectType === 'spa' || projectType === 'ds' ? `${projectName}` : `${orgName}-${projectName}`
 
     CliUx.ux.action.start('Create')
 
@@ -54,10 +52,10 @@ export default class CreateReact extends Command {
         type: 'list',
         name: 'projectType',
         message: 'Project type (single-page or micro-frontend)',
-        choices: ['spa', 'mfe'],
+        choices: ['spa', 'mfe', 'ds'],
       },
       {
-        when: answers => answers.projectType === 'mfe',
+        when: (answers) => answers.projectType === 'mfe',
         type: 'input',
         name: 'orgName',
         message: 'Organization name [namespace] (customer-portal, hdn-labs, etc...)',
@@ -66,10 +64,18 @@ export default class CreateReact extends Command {
       {
         type: 'input',
         name: 'projectName',
-        message: ({projectType}) => projectType === 'mfe' ?
-          'Microfrontend name (reward-auth-mfe, one-management-mfe, etc...)' :
-          'Project name (rewards, one, etc...)',
+        message: ({ projectType }) =>
+          projectType === 'mfe'
+            ? 'Microfrontend name (reward-auth-mfe, one-management-mfe, etc...)'
+            : 'Project name (rewards, one, etc...)',
         default: 'react-app',
+      },
+      {
+        when: (answers) => answers.projectType === 'ds',
+        type: 'input',
+        name: 'prefix',
+        message: 'Design System Prefix name (hdn, dy, ems, etc...)',
+        default: 'hdn',
       },
     ])
   }

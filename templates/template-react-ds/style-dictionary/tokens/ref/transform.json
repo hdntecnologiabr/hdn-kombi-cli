@@ -1,0 +1,37 @@
+{
+  "transform-scale": {
+    "ref": {
+      "5": {
+        "value": "scale(1.05)"
+      },
+      "25": {
+        "value": "scale(1.25)"
+      },
+      "50": {
+        "value": "scale(1.50)"
+      }
+    }
+  },
+  "transform-rotation": {
+    "ref": {
+      "quarter": {
+        "value": "rotate(90deg)"
+      },
+      "half": {
+        "value": "rotate(180deg)"
+      },
+      "full": {
+        "value": "rotate(360deg)"
+      },
+      "inverse-quarter": {
+        "value": "rotate(-90deg)"
+      },
+      "inverse-half": {
+        "value": "rotate(-180deg)"
+      },
+      "inverse-full": {
+        "value": "rotate(-360deg)"
+      }
+    }
+  }
+}
