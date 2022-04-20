@@ -1,13 +1,30 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import { render } from "@testing-library/react";
+import { shallow } from "enzyme";
+
+import { ThemeProvider, CssBaseline } from "@mui/material";
 
 import App from "./App";
+import { IntlProvider } from "./i18n";
+import { Routes } from "./Routes";
+import { theme } from "./styles/theme";
 
 describe("App", () => {
-  it("should render a tree with the proper styles prefixed by the MFE Name ", () => {
-    const result = render(<App />).asFragment();
+  it("should render correctly", () => {
+    const wrapper = shallow(<App />);
 
-    expect(result).toMatchSnapshot();
+    expect(
+      wrapper.matchesElement(
+        <ThemeProvider theme={theme}>
+          <IntlProvider>
+            <BrowserRouter>
+              <CssBaseline />
+              <Routes />
+            </BrowserRouter>
+          </IntlProvider>
+        </ThemeProvider>,
+      ),
+    ).toBeTruthy();
   });
 });
