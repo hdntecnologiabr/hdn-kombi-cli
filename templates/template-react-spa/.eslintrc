@@ -89,6 +89,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "max-params": ["error", 3],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error"
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/bans-ignore": 0
   }
 }

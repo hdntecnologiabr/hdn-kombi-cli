@@ -1,16 +1,16 @@
 import React from "react";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { render, screen, waitFor } from "@testing-library/react";
 
-import Routes from "./Routes";
+import { Routes } from "./Routes";
 
 describe("Router", () => {
   it("should render only the example page route", () => {
     render(
-      <HashRouter>
+      <BrowserRouter>
         <Routes />
-      </HashRouter>,
+      </BrowserRouter>,
     );
     waitFor(() => {
       expect(screen.getByText("It works! Translate value")).toBeInTheDocument();
