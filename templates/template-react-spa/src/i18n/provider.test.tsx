@@ -7,10 +7,10 @@ describe("flattenObject", () => {
   it("should return a flat array", () => {
     const result = flattenObject({
       TEST: {
-        TEST_TRANSLATE: "Translate",
+        TRANSLATE: "Translate",
       },
     });
-    expect(result).toEqual({ "TEST.TEST_TRANSLATE": "Translate" });
+    expect(result).toEqual({ "TEST.TRANSLATE": "Translate" });
   });
 });
 
@@ -18,7 +18,7 @@ describe("provider", () => {
   it("should display the text with the default language if the store does not have one selected", () => {
     render(
       <IntlProvider>
-        <FormattedMessage id="test.translate" />
+        <FormattedMessage id="TEST.TRANSLATE" />
       </IntlProvider>,
     );
     expect(screen.getByText("Translate")).toBeDefined();
