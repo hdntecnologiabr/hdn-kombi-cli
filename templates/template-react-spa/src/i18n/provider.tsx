@@ -11,7 +11,7 @@ type IIntlProvider = {
 const DEFAULT_LANGUAGE = "en-US";
 const MESSAGES: { [language: string]: MessageMap } = {
   enUS,
-  ptBR
+  ptBR,
 };
 
 export function IntlProvider({ children }: IIntlProvider): JSX.Element {
