@@ -16,19 +16,17 @@ Kombi CLI
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g kombi-cli
 $ kombi COMMAND
 running command...
 $ kombi (--version)
-kombi-cli/0.0.13-beta linux-x64 node-v16.14.0
+kombi-cli/0.0.14-beta linux-x64 node-v16.14.0
 $ kombi --help [COMMAND]
 USAGE
   $ kombi COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 ```sh-session
@@ -46,20 +44,19 @@ USAGE
 # Commands
 
 <!-- commands -->
-
-- [`kombi create`](#kombi-create)
-- [`kombi create dotnet`](#kombi-create-dotnet)
-- [`kombi create react`](#kombi-create-react)
-- [`kombi help [COMMAND]`](#kombi-help-command)
-- [`kombi plugins`](#kombi-plugins)
-- [`kombi plugins:install PLUGIN...`](#kombi-pluginsinstall-plugin)
-- [`kombi plugins:inspect PLUGIN...`](#kombi-pluginsinspect-plugin)
-- [`kombi plugins:install PLUGIN...`](#kombi-pluginsinstall-plugin-1)
-- [`kombi plugins:link PLUGIN`](#kombi-pluginslink-plugin)
-- [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin)
-- [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin-1)
-- [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin-2)
-- [`kombi plugins update`](#kombi-plugins-update)
+* [`kombi create`](#kombi-create)
+* [`kombi create dotnet`](#kombi-create-dotnet)
+* [`kombi create react`](#kombi-create-react)
+* [`kombi help [COMMAND]`](#kombi-help-command)
+* [`kombi plugins`](#kombi-plugins)
+* [`kombi plugins:install PLUGIN...`](#kombi-pluginsinstall-plugin)
+* [`kombi plugins:inspect PLUGIN...`](#kombi-pluginsinspect-plugin)
+* [`kombi plugins:install PLUGIN...`](#kombi-pluginsinstall-plugin-1)
+* [`kombi plugins:link PLUGIN`](#kombi-pluginslink-plugin)
+* [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin)
+* [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin-1)
+* [`kombi plugins:uninstall PLUGIN...`](#kombi-pluginsuninstall-plugin-2)
+* [`kombi plugins update`](#kombi-plugins-update)
 
 ## `kombi create`
 
@@ -83,7 +80,7 @@ EXAMPLES
   $ kombi create -t dotnet
 ```
 
-_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.11-beta/dist/commands/create/index.ts)_
+_See code: [dist/commands/create/index.ts](https://github.com/hdntecnologiabr/hdn-kombi-cli/blob/v0.0.14-beta/dist/commands/create/index.ts)_
 
 ## `kombi create dotnet`
 
@@ -186,7 +183,7 @@ ALIASES
   $ kombi plugins add
 
 EXAMPLES
-  $ kombi plugins:install myplugin
+  $ kombi plugins:install myplugin 
 
   $ kombi plugins:install https://github.com/someuser/someplugin
 
@@ -246,7 +243,7 @@ ALIASES
   $ kombi plugins add
 
 EXAMPLES
-  $ kombi plugins:install myplugin
+  $ kombi plugins:install myplugin 
 
   $ kombi plugins:install https://github.com/someuser/someplugin
 
@@ -364,5 +361,4 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
-
 <!-- commandsstop -->
