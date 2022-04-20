@@ -2,7 +2,8 @@ import React from "react";
 
 import { shallow } from "enzyme";
 
-import ExampleComponentView from "./ExampleComponentView";
+import { Box } from "./ExampleComponent.style";
+import { ExampleComponentView } from "./ExampleComponentView";
 
 describe("ExampleComponentView", () => {
   it("should render correctly", () => {
@@ -10,9 +11,9 @@ describe("ExampleComponentView", () => {
 
     expect(
       wrapper.matchesElement(
-        <div>
+        <Box>
           <code>Example component</code>
-        </div>
+        </Box>
       )
     ).toBeTruthy();
   });

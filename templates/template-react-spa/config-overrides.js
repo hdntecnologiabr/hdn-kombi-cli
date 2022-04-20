@@ -1,4 +1,5 @@
-const { addBabelPlugin, override } = require("customize-cra")
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { addBabelPlugin, override } = require("customize-cra");
 
 module.exports = override(
   addBabelPlugin([
@@ -7,4 +8,4 @@ module.exports = override(
       rootPathSuffix: "src",
     },
   ]),
-)
+);

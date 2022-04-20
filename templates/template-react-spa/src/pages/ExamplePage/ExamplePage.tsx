@@ -1,14 +1,17 @@
 import React from "react";
+import { useIntl } from "react-intl";
 
-function ExamplePage(): JSX.Element {
+import { Box, Grid, Typography } from "@mui/material";
+
+export default function ExamplePage(): JSX.Element {
+  const { formatMessage } = useIntl();
+
   return (
-    <div>
-      <div>It works!</div>
-      <pre>
-        <code>awesome</code>
-      </pre>
-    </div>
+    <Box>
+      <Typography variant="h2">{formatMessage({ id: "TEST.TRANSLATE" })}</Typography>
+      <Grid>
+        <Typography>{formatMessage({ id: "TEST.MISSING" })}</Typography>
+      </Grid>
+    </Box>
   );
 }
-
-export default ExamplePage;

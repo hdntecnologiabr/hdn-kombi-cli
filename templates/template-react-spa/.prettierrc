@@ -4,6 +4,7 @@
   "arrowParens": "avoid",
   "trailingComma": "all",
   "endOfLine": "auto",
+  "semi": true,
   "overrides": [
     {
       "files": "*.md",

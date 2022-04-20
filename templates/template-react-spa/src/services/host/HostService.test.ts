@@ -6,7 +6,7 @@ describe("HostService", () => {
   beforeEach(() => {
     jest.resetModules();
     process.env = { ...OLD_ENV };
-    /* @ts-ignore */
+    // @ts-ignore
     delete process.env.NODE_ENV;
   });
 
@@ -16,7 +16,7 @@ describe("HostService", () => {
 
   describe("getCategoryServiceHost", () => {
     it("should return the DEV categoryService host", () => {
-      /* @ts-ignore */
+      // @ts-ignore
       process.env.NODE_ENV = "development";
       process.env.API_HOST = "the-host";
 
@@ -26,7 +26,7 @@ describe("HostService", () => {
     });
 
     it("should return the PROD categoryService host", () => {
-      /* @ts-ignore */
+      // @ts-ignore
       process.env.NODE_ENV = "production";
 
       const result = HostService.getApiHost();
