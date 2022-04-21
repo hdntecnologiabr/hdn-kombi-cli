@@ -17,7 +17,7 @@ const resources = {
 
 const i18n = use(initReactI18next).use(LanguageDetector).init({
   resources,
-  fallbackLng: "pt-BR",
+  fallbackLng: import.meta.env.VITE_APP_LANGUAGE ?? "pt-BR",
 });
 
 export { i18n };
