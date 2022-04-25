@@ -1,3 +1,4 @@
+import { API_URL } from "~/utils/constants";
 import axios from "axios";
 
 import {
@@ -7,7 +8,7 @@ import {
 } from "./interceptors";
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: API_URL,
 });
 
 apiClient.interceptors.request.use(authInterceptor);

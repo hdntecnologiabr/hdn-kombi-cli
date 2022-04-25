@@ -15,8 +15,9 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["src", "server", "config", "*.config.ts"],
+  "include": ["src", "mock", "config", "*.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

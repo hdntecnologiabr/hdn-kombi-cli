@@ -1,6 +1,7 @@
 import { initReactI18next } from "react-i18next";
 
-import { Resource, use } from "i18next";
+import { VITE_APP_LANGUAGE } from "~/utils/constants";
+import i18next, { Resource, use } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import enUS from "./locales/enUS/common.json";
@@ -17,7 +18,11 @@ const resources: Resource = {
 
 const i18n = use(initReactI18next).use(LanguageDetector).init({
   resources,
-  fallbackLng: import.meta.env.VITE_APP_LANGUAGE ?? "pt-BR",
+  fallbackLng: VITE_APP_LANGUAGE,
 });
 
-export { i18n };
+export default i18n;
+
+const getLanguage = () => i18next.language || window.localStorage.i18nextLng;
+
+console.log(getLanguage());

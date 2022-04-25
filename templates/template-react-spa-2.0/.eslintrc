@@ -50,7 +50,7 @@
       "error",
       {
         "devDependencies": [
-          "server/**/*.ts",
+          "mock/**/*.ts",
           "config/**/*.ts",
           "*.config.ts",
           "**/*.test.ts",

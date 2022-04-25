@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 function SignUpPage() {
   const { t } = useTranslation();
 
-  return <Box>{t("t")}</Box>;
+  return <Box>{t("title")}</Box>;
 }
 
 export default SignUpPage;
