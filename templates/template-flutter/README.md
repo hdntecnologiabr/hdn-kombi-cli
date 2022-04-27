@@ -6,27 +6,33 @@ O aplicativo está sendo desenvolvido utilizando o [Flutter](https://flutter.dev
 
 Este template foi desenvolvido pensando da seguinte forma:
 
-### **Estrutura** 🧩
+### 🧩 **Estrutura**
 
 Essa arquitetura é inspirada da [Clean Dart](https://github.com/Flutterando/Clean-Dart), uma arquitetura muito famosa na comunidade Flutter em que ela presa pelo desacoplamento, aumentando assim a escalabilidade e a manutenabilidade do projeto.
 
-### **Controle de Estado** 🪄
+### 🪄 **Controle de Estado**
 
 Para o controle de estado dentro do Flutter, a biblioteca [Mobx](https://mobx.netlify.app) é a que apresenta a menor curva de aprendizagem, e também é amplamente utilizada dentro da comunidade Flutter.
 
-### **Testes** 🔨
+### 🪄 **Injeção de Dependência**
 
-O Flutter conta com uma biblioteca de testes nativamente. Mas para auxiliar na construção de mocks para os testes, temos o apoio do pacote [Mockito](https://pub.dev/packages/mockito)
+[Flutter Modular](https://modular.flutterando.com.br/docs/flutter_modular/start/) foi construído usando o motor do modular_core que é responsável pelo sistema de injeção de dependência e gerenciamento de rotas.
 
-Abaixo estão listadas todas as tecnologias utilizadas dentro desse template:
+### ♾️ **Chamadas API**
 
-- [Flutter](https://flutter.dev/)
-- [Dart](https://dart.dev/)
-- [Mobx](https://balta.io/blog/flutter-mobx)
-- [GetIt](https://medium.com/flutterdevs/explore-getit-in-flutter-8db723e9d7cf)
-- [REST API](https://www.redhat.com/en/topics/api/what-is-a-rest-api)
-- [Dio](https://blog.logrocket.com/networking-flutter-using-dio/)
-- [Json Serializable](https://pub.dev/packages/json_serializable)
+Para as chamadas a API dentro do Flutter, o pacote [Dio](https://pub.dev/packages/dio) com suporte a interceptors, FormData, Request Cancellation e etc.
+
+### 🐝 **Persistência de Dados**
+
+O [Hive](https://pub.dev/packages/hive) é um banco de dados de valor-chave leve e extremamente rápido escrito em Dart puro
+
+### 🎉 **Animações**
+
+[Lottie](https://pub.dev/packages/lottie) é uma biblioteca que analisa animações do Adobe After Effects exportadas como json e as renderiza nativamente em dispositivos móveis!
+
+### 🔨 **Testes**
+
+O Flutter conta com uma biblioteca de testes nativamente. Mas para auxiliar na construção de mocks para os testes, temos o apoio do pacote [Mocktail](https://pub.dev/packages/mocktail) e [Faker](https://pub.dev/packages/faker)
 
 ---
 
