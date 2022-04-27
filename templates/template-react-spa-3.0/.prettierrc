@@ -1,0 +1,16 @@
+{
+  "printWidth": 100,
+  "singleQuote": false,
+  "arrowParens": "avoid",
+  "trailingComma": "all",
+  "endOfLine": "auto",
+  "semi": true,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown"
+      }
+    }
+  ]
+}
