@@ -1,1 +1,1 @@
-export * from "./todo/TodoStore";
+export * from "./todo/todo-store";

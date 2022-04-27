@@ -1,6 +1,6 @@
 import "react-i18next";
-import enUS from "~/i18n/locales/enUS/common.json";
-import ptBR from "~/i18n/locales/ptBR/common.json";
+import enUS from "~/languages/enUS/common.json";
+import ptBR from "~/languages/ptBR/common.json";
 
 declare module "react-i18next" {
   interface CustomTypeOptions {

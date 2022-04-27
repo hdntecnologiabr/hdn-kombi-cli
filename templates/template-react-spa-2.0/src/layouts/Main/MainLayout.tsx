@@ -1,9 +1,13 @@
 import { Outlet } from "react-router-dom";
 
-export function MainLayout() {
+import { Container } from "@mui/material";
+
+function MainLayout() {
   return (
-    <main>
+    <Container component="main" maxWidth="lg">
       <Outlet />
-    </main>
+    </Container>
   );
 }
+
+export { MainLayout };

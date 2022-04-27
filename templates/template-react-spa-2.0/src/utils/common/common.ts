@@ -59,4 +59,4 @@ const Common = {
   camelCase,
 };
 
-export default Common;
+export { Common };

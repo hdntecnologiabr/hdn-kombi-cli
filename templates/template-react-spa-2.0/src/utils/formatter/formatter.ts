@@ -80,4 +80,4 @@ const Formatter = {
   truncate: formatStringTruncate,
 };
 
-export default Formatter;
+export { Formatter };

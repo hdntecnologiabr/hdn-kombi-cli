@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import Common from "./common";
+import { Common } from "./common";
 
 describe("common", () => {
   describe("debounce function", () => {

@@ -18,6 +18,6 @@
     "noEmit": true,
     "types": ["vitest/globals"]
   },
-  "include": ["src", "mock", "config", "*.config.ts"],
+  "include": ["src", "mocks", "config", "*.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

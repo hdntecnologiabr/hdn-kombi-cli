@@ -1,7 +1,7 @@
 import { createStore } from "effector";
 
-import { findTodos } from "./TodoEvents";
-import { TodoState } from "./TodoState";
+import { findTodos } from "./todo-events";
+import { TodoState } from "./todo-state";
 
 export const $todoStore = createStore<TodoState>({}).on(findTodos, (state) => ({
   ...state,
