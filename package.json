@@ -35,7 +35,7 @@
     "chalk": "^5.0.1",
     "degit": "^2.8.4",
     "fs-extra": "^10.1.0",
-    "inquirer": "^8.2.1",
+    "inquirer": "^8.2.3",
     "replace-in-file": "^6.3.2",
     "shelljs": "^0.8.5"
   },
