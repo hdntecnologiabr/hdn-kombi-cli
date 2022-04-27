@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { Box } from './ExampleComponent.style';
+import { ExampleComponentProps } from './ExampleComponent.types';
 
-function ExampleComponentView(): JSX.Element {
+function ExampleComponentView({ test }: ExampleComponentProps): JSX.Element {
   return (
     <Box>
-      <code>Example component</code>
+      {test && (<code>Example component</code>)}
     </Box>
   );
 }

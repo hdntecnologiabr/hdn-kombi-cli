@@ -18,7 +18,6 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/**/*.stories.{js,jsx,ts,tsx}',
     '!src/webpack.config.{dev,prod}.js',
-    '!src/<%= normalizedMfeName %>.tsx',
     '!src/analyze.js',
     '!src/paths.js',
   ],
