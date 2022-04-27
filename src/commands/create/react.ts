@@ -4,12 +4,16 @@ import { replaceInFileSync } from 'replace-in-file'
 import { exec } from 'shelljs'
 import degit = require('degit')
 
+// ****** Solução paliativa para testar o template em localhost
+// import fs = require('fs-extra')
+
 type ProjectType = 'spa' | 'mfe' | 'ds'
 
 interface PromptResponse {
   orgName?: string
   projectName?: string
   projectType?: ProjectType
+  prefix?: string
 }
 
 export default class CreateReact extends Command {
@@ -22,18 +26,34 @@ export default class CreateReact extends Command {
   static args = []
 
   public async run(): Promise<void> {
-    const { orgName, projectName, projectType } = await this.doPrompt()
+    const { orgName, projectName, projectType, prefix } = await this.doPrompt()
 
     const src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
+
+    // ****** Solução paliativa para testar o template em localhost
+    // const src = `/home/rodrigo-urbano/Programacao/HDN/Kombi/hdn-kombi-cli/templates/template-react-${projectType}`
+
     const dest = projectType === 'spa' || projectType === 'ds' ? `${projectName}` : `${orgName}-${projectName}`
 
     CliUx.ux.action.start('Create')
+
+    // ****** Solução paliativa para testar o template em localhost
+    // fs.copy(src, dest).then(() => {
+    //   if (projectType === 'ds' && prefix) {
+    //     console.log('prefix', prefix)
+    //     this.replaceNameDS(dest, prefix)
+    //   }
+    // })
 
     const emitter = degit(src)
     await emitter.clone(dest)
 
     if (projectType === 'mfe' && orgName && projectName) this.replaceNameMFE(dest, orgName, projectName)
     else this.replaceName(dest)
+
+    if (projectType === 'ds' && prefix) {
+      this.replaceNameDS(dest, prefix)
+    }
 
     CliUx.ux.action.start('Install')
 
@@ -82,11 +102,7 @@ export default class CreateReact extends Command {
 
   private replaceName(dest: string) {
     replaceInFileSync({
-      files: [
-        `${dest}/public/index.html`,
-        `${dest}/package.json`,
-        `${dest}/README.md`,
-      ],
+      files: [`${dest}/public/index.html`, `${dest}/package.json`, `${dest}/README.md`],
       from: '<%= fullName %>',
       to: dest,
     })
@@ -94,32 +110,37 @@ export default class CreateReact extends Command {
 
   private replaceNameMFE(dest: string, orgName: string, mfeName: string) {
     replaceInFileSync({
-      files: [
-        `${dest}/*`,
-      ],
+      files: [`${dest}/*`],
       from: '<%= fullName %>',
       to: `@${orgName}/${mfeName}`,
     })
     replaceInFileSync({
-      files: [
-        `${dest}/*`,
-      ],
+      files: [`${dest}/*`],
       from: '<%= normalizedMfeName %>',
       to: dest,
     })
     replaceInFileSync({
-      files: [
-        `${dest}/*`,
-      ],
+      files: [`${dest}/*`],
       from: '<%= orgName %>',
       to: orgName,
     })
     replaceInFileSync({
-      files: [
-        `${dest}/*`,
-      ],
+      files: [`${dest}/*`],
       from: '<%= mfeName %>',
       to: mfeName,
+    })
+  }
+
+  private replaceNameDS(dest: string, prefix: string) {
+    replaceInFileSync({
+      files: [`${dest}/**/*`],
+      from: /<%= fullName %>/g,
+      to: dest,
+    })
+    replaceInFileSync({
+      files: [`${dest}/**/*`],
+      from: /<%= prefix %>/g,
+      to: prefix,
     })
   }
 }
