@@ -3,10 +3,10 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#000",
+      main: "#17305A",
     },
     secondary: {
-      main: "#fff",
+      main: "#9ACA3C",
     },
     error: {
       main: "#CA3C3C",
@@ -28,32 +28,32 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Roboto, sans-serif",
     h1: {
-      fontFamily: "Roboto, sans-serif",
+      fontFamily: "Varela Round, sans-serif",
       fontSize: "9.6rem",
       fontWeight: 400,
     },
     h2: {
-      fontFamily: "Roboto, sans-serif",
+      fontFamily: "Varela Round, sans-serif",
       fontSize: "6rem",
       fontWeight: 400,
     },
     h3: {
-      fontFamily: "Roboto, sans-serif",
+      fontFamily: "Varela Round, sans-serif",
       fontSize: "4.8rem",
       fontWeight: 400,
     },
     h4: {
-      fontFamily: "Roboto, sans-serif",
+      fontFamily: "Varela Round, sans-serif",
       fontSize: "3.4rem",
       fontWeight: 400,
     },
     h5: {
-      fontFamily: "Roboto, sans-serif",
+      fontFamily: "Varela Round, sans-serif",
       fontSize: "2.4rem",
       fontWeight: 400,
     },
     h6: {
-      fontFamily: "Roboto, sans-serif",
+      fontFamily: "Varela Round, sans-serif",
       fontSize: "2rem",
       fontWeight: 400,
     },
@@ -72,6 +72,8 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         "*": {
+          padding: 0,
+          margin: 0,
           fontSize: "62.5%",
           boxSizing: "border-box",
         },

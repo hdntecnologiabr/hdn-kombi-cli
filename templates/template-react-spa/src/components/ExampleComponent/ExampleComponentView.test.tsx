@@ -13,8 +13,8 @@ describe("ExampleComponentView", () => {
       wrapper.matchesElement(
         <Box>
           <code>Example component</code>
-        </Box>
-      )
+        </Box>,
+      ),
     ).toBeTruthy();
   });
 });

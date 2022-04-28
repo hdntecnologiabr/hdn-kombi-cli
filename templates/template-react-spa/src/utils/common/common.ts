@@ -9,18 +9,18 @@ const camelCase = (str: string): string => {
     .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => {
       return index === 0 ? word.toLowerCase() : word.toUpperCase();
     })
-    .replace(/\s+/g, '');
+    .replace(/\s+/g, "");
 };
 
 function debounce<T extends unknown[], U>(
   callback: (...props: T) => PromiseLike<U> | U,
-  wait: number
+  wait: number,
 ): (...props: T) => Promise<U> {
   let timer: NodeJS.Timeout;
 
   return (...props: T): Promise<U> => {
     clearTimeout(timer);
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       timer = setTimeout(() => resolve(callback(...props)), wait);
     });
   };
@@ -48,11 +48,9 @@ const round = (number: number, decimal = 0): number => {
   return +`${exponentialNumber}`;
 };
 
-const Common = {
+export const Common = {
   debounce,
   random,
   round,
   camelCase,
 };
-
-export default Common;
