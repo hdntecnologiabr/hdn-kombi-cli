@@ -11,12 +11,6 @@
       "options": {
         "parser": "markdown"
       }
-    },
-    {
-      "files": "*.feature",
-      "options": {
-        "parser": "cucumber"
-      }
     }
   ]
 }

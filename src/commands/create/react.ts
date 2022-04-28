@@ -1,7 +1,7 @@
-import { CliUx, Command } from '@oclif/core'
+import {CliUx, Command} from '@oclif/core'
 import * as inquirer from 'inquirer'
-import { replaceInFileSync } from 'replace-in-file'
-import { exec } from 'shelljs'
+import {replaceInFileSync} from 'replace-in-file'
+import {exec} from 'shelljs'
 import degit = require('degit')
 
 // ****** Solução paliativa para testar o template em localhost
@@ -26,12 +26,12 @@ export default class CreateReact extends Command {
   static args = []
 
   public async run(): Promise<void> {
-    const { orgName, projectName, projectType, prefix } = await this.doPrompt()
+    const {orgName, projectName, projectType, prefix} = await this.doPrompt()
 
     const src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
 
     // ****** Solução paliativa para testar o template em localhost
-    // const src = `/home/rodrigo-urbano/Programacao/HDN/Kombi/hdn-kombi-cli/templates/template-react-${projectType}`
+    // const src = `/home/lcoalves/projects/hdn/hdn-kombi-cli/templates/template-react-${projectType}`
 
     const dest = projectType === 'spa' || projectType === 'ds' ? `${projectName}` : `${orgName}-${projectName}`
 
@@ -75,7 +75,7 @@ export default class CreateReact extends Command {
         choices: ['spa', 'mfe', 'ds'],
       },
       {
-        when: (answers) => answers.projectType === 'mfe',
+        when: answers => answers.projectType === 'mfe',
         type: 'input',
         name: 'orgName',
         message: 'Organization name [namespace] (customer-portal, hdn-labs, etc...)',
@@ -84,14 +84,14 @@ export default class CreateReact extends Command {
       {
         type: 'input',
         name: 'projectName',
-        message: ({ projectType }) =>
-          projectType === 'mfe'
-            ? 'Microfrontend name (reward-auth-mfe, one-management-mfe, etc...)'
-            : 'Project name (rewards, one, etc...)',
+        message: ({projectType}) =>
+          projectType === 'mfe' ?
+            'Microfrontend name (reward-auth-mfe, one-management-mfe, etc...)' :
+            'Project name (rewards, one, etc...)',
         default: 'react-app',
       },
       {
-        when: (answers) => answers.projectType === 'ds',
+        when: answers => answers.projectType === 'ds',
         type: 'input',
         name: 'prefix',
         message: 'Design System Prefix name (hdn, dy, ems, etc...)',
@@ -102,7 +102,7 @@ export default class CreateReact extends Command {
 
   private replaceName(dest: string) {
     replaceInFileSync({
-      files: [`${dest}/public/index.html`, `${dest}/package.json`, `${dest}/README.md`],
+      files: [`${dest}/**/*`],
       from: '<%= fullName %>',
       to: dest,
     })
@@ -110,22 +110,22 @@ export default class CreateReact extends Command {
 
   private replaceNameMFE(dest: string, orgName: string, mfeName: string) {
     replaceInFileSync({
-      files: [`${dest}/*`],
+      files: [`${dest}/**/*`],
       from: '<%= fullName %>',
       to: `@${orgName}/${mfeName}`,
     })
     replaceInFileSync({
-      files: [`${dest}/*`],
+      files: [`${dest}/**/*`],
       from: '<%= normalizedMfeName %>',
       to: dest,
     })
     replaceInFileSync({
-      files: [`${dest}/*`],
+      files: [`${dest}/**/*`],
       from: '<%= orgName %>',
       to: orgName,
     })
     replaceInFileSync({
-      files: [`${dest}/*`],
+      files: [`${dest}/**/*`],
       from: '<%= mfeName %>',
       to: mfeName,
     })

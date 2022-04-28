@@ -1,8 +1,8 @@
 {
   "env": {
-    "jest": true,
     "browser": true,
-    "es2021": true,
+    "es6": true,
+    "jest": true,
     "node": true
   },
   "extends": [
@@ -57,10 +57,7 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "**/setupTests.ts"] }
-    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/prefer-default-export": 0,
     "import/no-unresolved": 0,
     "import/extensions": [
@@ -90,6 +87,6 @@
     "max-params": ["error", 3],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
-    "@typescript-eslint/bans-ignore": 0
+    "@typescript-eslint/ban-ts-comment": 0
   }
 }
