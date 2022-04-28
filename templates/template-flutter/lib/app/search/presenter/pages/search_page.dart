@@ -3,8 +3,8 @@ import "package:flutter_mobx/flutter_mobx.dart";
 import "package:flutter_modular/flutter_modular.dart";
 import "package:template/app/search/domain/entities/result.dart";
 import "package:template/app/search/domain/errors/errors.dart";
-import "package:template/app/search/presenter/search_store.dart";
 import "package:template/app/search/presenter/states/search_state.dart";
+import "package:template/app/search/presenter/stores/search_store.dart";
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);

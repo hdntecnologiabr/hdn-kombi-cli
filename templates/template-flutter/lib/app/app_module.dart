@@ -3,8 +3,8 @@ import "package:flutter_modular/flutter_modular.dart";
 import "package:template/app/search/domain/usecases/search_by_text.dart";
 import "package:template/app/search/external/github/github_search_datasource.dart";
 import "package:template/app/search/infra/repositories/search_repository_impl.dart";
-import "package:template/app/search/presenter/search_page.dart";
-import "package:template/app/search/presenter/search_store.dart";
+import "package:template/app/search/presenter/pages/search_page.dart";
+import "package:template/app/search/presenter/stores/search_store.dart";
 
 class AppModule extends Module {
   @override
