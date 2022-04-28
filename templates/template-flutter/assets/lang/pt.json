@@ -1,0 +1,10 @@
+{
+  "error-messages": {
+    "nothing-found": "Nada encontrado",
+    "client": "Erro no github",
+    "internal": "Erro interno"
+  },
+  "app-title": "Pesquisa no Github",
+  "input-label": "Buscar...",
+  "helper-text": "Digite algo..."
+}

@@ -5,6 +5,7 @@ import "package:template/app/search/domain/entities/result.dart";
 import "package:template/app/search/domain/errors/errors.dart";
 import "package:template/app/search/presenter/states/search_state.dart";
 import "package:template/app/search/presenter/stores/search_store.dart";
+import "package:template/app/shared/localizations/translate_app.dart";
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -29,16 +30,16 @@ class _SearchPageState extends ModularState<SearchPage, SearchStore> {
 
   Widget _buildError(Failure error) {
     if (error is EmptyList) {
-      return const Center(
-        child: Text("Nothing found"),
+      return Center(
+        child: Text(TranslateApp(context).text("error.nothing-found")),
       );
     } else if (error is ErrorSearch) {
-      return const Center(
-        child: Text("Error on github"),
+      return Center(
+        child: Text(TranslateApp(context).text("error.client")),
       );
     } else {
-      return const Center(
-        child: Text("Internal error"),
+      return Center(
+        child: Text(TranslateApp(context).text("error.internal")),
       );
     }
   }
@@ -46,7 +47,7 @@ class _SearchPageState extends ModularState<SearchPage, SearchStore> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text("Github Search"),
+          title: Text(TranslateApp(context).text("title")),
         ),
         body: Column(
           children: <Widget>[
@@ -54,9 +55,9 @@ class _SearchPageState extends ModularState<SearchPage, SearchStore> {
               padding: const EdgeInsets.only(top: 8, right: 8, left: 8),
               child: TextField(
                 onChanged: controller.setSearchText,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Search...",
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  labelText: TranslateApp(context).text("input-label"),
                 ),
               ),
             ),
@@ -70,8 +71,8 @@ class _SearchPageState extends ModularState<SearchPage, SearchStore> {
                   }
 
                   if (state is StartState) {
-                    return const Center(
-                      child: Text("Type something..."),
+                    return Center(
+                      child: Text(TranslateApp(context).text("helper-text")),
                     );
                   } else if (state is LoadingState) {
                     return const Center(
