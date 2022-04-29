@@ -6,8 +6,8 @@ import "package:flutter_test/flutter_test.dart";
 import "package:mocktail/mocktail.dart";
 import "package:modular_test/modular_test.dart";
 import "package:template/app/app_module.dart";
-import "package:template/app/search/presenter/search_store.dart";
 import "package:template/app/search/presenter/states/search_state.dart";
+import "package:template/app/search/presenter/stores/search_store.dart";
 
 class DioMock extends Mock implements Dio {}
 
