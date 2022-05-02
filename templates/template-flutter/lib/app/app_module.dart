@@ -1,23 +1,15 @@
-import "package:dio/dio.dart";
 import "package:flutter_modular/flutter_modular.dart";
-import "package:template/app/search/domain/usecases/search_by_text.dart";
-import "package:template/app/search/external/github/github_search_datasource.dart";
-import "package:template/app/search/infra/repositories/search_repository_impl.dart";
-import "package:template/app/search/presenter/pages/search_page.dart";
-import "package:template/app/search/presenter/stores/search_store.dart";
+import "package:template/app/search/search_module.dart";
+import "package:template/app/shared/clients/http_client.dart";
 
 class AppModule extends Module {
   @override
   List<Bind> get binds => [
-        $SearchByTextImpl,
-        $SearchRepositoryImpl,
-        $GithubSearchDataSource,
-        Bind((i) => Dio()),
-        $SearchStore,
+        Bind((i) => DioClientImpl(baseUrl: "https://api.github.com")),
       ];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute("/", child: (context, args) => const SearchPage()),
-      ];
+  final List<ModularRoute> routes = [
+    ModuleRoute(Modular.initialRoute, module: SearchModule()),
+  ];
 }

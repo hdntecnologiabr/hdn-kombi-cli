@@ -1,10 +1,10 @@
 {
-  "error": {
-    "nothing-found": "Nothing found",
-    "client": "Error on github",
-    "internal": "Internal error"
-  },
-  "title": "Github Search",
-  "input-label": "Search...",
-  "helper-text": "Type something..."
+	"error": {
+		"nothing-found": "Nothing found",
+		"client": "Error on github",
+		"internal": "Internal error"
+	},
+	"title": "Github Search",
+	"input-label": "Search a user...",
+	"empty-helper": "Type something to find a user..."
 }

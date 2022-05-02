@@ -49,6 +49,13 @@ mixin _$SearchStore on _SearchStoreBase, Store {
     });
   }
 
+  final _$onSubmitAsyncAction = AsyncAction('_SearchStoreBase.onSubmit');
+
+  @override
+  Future<dynamic> onSubmit() {
+    return _$onSubmitAsyncAction.run(() => super.onSubmit());
+  }
+
   final _$_SearchStoreBaseActionController =
       ActionController(name: '_SearchStoreBase');
 

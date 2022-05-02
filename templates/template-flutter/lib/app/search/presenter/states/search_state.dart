@@ -3,8 +3,8 @@ import "package:template/app/search/domain/errors/errors.dart";
 
 abstract class SearchState {}
 
-class StartState implements SearchState {
-  const StartState();
+class EmptyState implements SearchState {
+  const EmptyState();
 }
 
 class LoadingState implements SearchState {

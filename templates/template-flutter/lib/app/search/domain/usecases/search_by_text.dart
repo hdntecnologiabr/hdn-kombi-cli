@@ -21,11 +21,15 @@ class SearchByTextImpl implements SearchByText {
     final option = optionOf(textSearch);
 
     return option.fold(() => Left(InvalidSearchText()), (text) async {
-      final result = await repository.getUsers(text);
-      return result.fold(
-        left,
-        (r) => r.isEmpty ? left(EmptyList()) : right(r),
-      );
+      if (text.isNotEmpty) {
+        final result = await repository.getUsers(text);
+        return result.fold(
+          left,
+          (r) => r.isEmpty ? left(EmptyList()) : right(r),
+        );
+      } else {
+        return left(InvalidSearchText());
+      }
     });
   }
 }

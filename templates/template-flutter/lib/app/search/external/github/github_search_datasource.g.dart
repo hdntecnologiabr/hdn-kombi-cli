@@ -7,7 +7,7 @@ part of 'github_search_datasource.dart';
 // **************************************************************************
 
 final $GithubSearchDataSource = BindInject(
-  (i) => GithubSearchDataSource(i<Dio>()),
+  (i) => GithubSearchDataSource(i<IClient>()),
   isSingleton: false,
   isLazy: true,
 );

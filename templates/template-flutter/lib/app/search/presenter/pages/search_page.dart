@@ -59,6 +59,7 @@ class _SearchPageState extends ModularState<SearchPage, SearchStore> {
                   border: const OutlineInputBorder(),
                   labelText: TranslateApp(context).text("input-label"),
                 ),
+                onSubmitted: (_) => controller.onSubmit(),
               ),
             ),
             Expanded(
@@ -70,9 +71,9 @@ class _SearchPageState extends ModularState<SearchPage, SearchStore> {
                     return _buildError(state.error);
                   }
 
-                  if (state is StartState) {
+                  if (state is EmptyState) {
                     return Center(
-                      child: Text(TranslateApp(context).text("helper-text")),
+                      child: Text(TranslateApp(context).text("empty-helper")),
                     );
                   } else if (state is LoadingState) {
                     return const Center(
