@@ -1,11 +1,11 @@
+/* eslint-disable unicorn/prefer-module */
 import {CliUx, Command} from '@oclif/core'
 import * as inquirer from 'inquirer'
 import {replaceInFileSync} from 'replace-in-file'
 import {exec} from 'shelljs'
 import degit = require('degit')
-
-// ****** Solução paliativa para testar o template em localhost
-// import fs = require('fs-extra')
+import fs = require('fs-extra')
+import path = require('path')
 
 type ProjectType = 'spa' | 'mfe' | 'ds'
 
@@ -27,34 +27,28 @@ export default class CreateReact extends Command {
 
   public async run(): Promise<void> {
     const {orgName, projectName, projectType, prefix} = await this.doPrompt()
-
-    const src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
-
-    // ****** Solução paliativa para testar o template em localhost
-    // const src = `/home/lcoalves/projects/hdn/hdn-kombi-cli/templates/template-react-${projectType}`
-
     const dest = projectType === 'spa' || projectType === 'ds' ? `${projectName}` : `${orgName}-${projectName}`
+    let src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
 
-    CliUx.ux.action.start('Create')
+    if (process.env.NODE_ENV === 'development') {
+      const templatesPath = path.join(__dirname, '..', '..', '..', 'templates')
+      src = `${templatesPath}/template-react-${projectType}`
 
-    // ****** Solução paliativa para testar o template em localhost
-    // fs.copy(src, dest).then(() => {
-    //   if (projectType === 'ds' && prefix) {
-    //     console.log('prefix', prefix)
-    //     this.replaceNameDS(dest, prefix)
-    //   }
-    // })
+      fs.copy(src, dest).then(() => {
+        if (projectType === 'ds' && prefix) this.replaceNameDS(dest, prefix)
+        if (projectType === 'mfe' && orgName && projectName) this.replaceNameMFE(dest, orgName, projectName)
+        if (projectType === 'spa' && projectName) this.replaceName(dest)
+      })
+    } else {
+      const emitter = degit(src)
+      await emitter.clone(dest)
 
-    const emitter = degit(src)
-    await emitter.clone(dest)
-
-    if (projectType === 'mfe' && orgName && projectName) this.replaceNameMFE(dest, orgName, projectName)
-    else this.replaceName(dest)
-
-    if (projectType === 'ds' && prefix) {
-      this.replaceNameDS(dest, prefix)
+      if (projectType === 'ds' && prefix) this.replaceNameDS(dest, prefix)
+      if (projectType === 'mfe' && orgName && projectName) this.replaceNameMFE(dest, orgName, projectName)
+      if (projectType === 'spa' && projectName) this.replaceName(dest)
     }
 
+    CliUx.ux.action.start('Create')
     CliUx.ux.action.start('Install')
 
     exec(`cd ${dest} && git init`)
@@ -132,6 +126,11 @@ export default class CreateReact extends Command {
   }
 
   private replaceNameDS(dest: string, prefix: string) {
+    replaceInFileSync({
+      files: [`${dest}/.storybook/*`],
+      from: /<%= fullName %>/g,
+      to: dest,
+    })
     replaceInFileSync({
       files: [`${dest}/**/*`],
       from: /<%= fullName %>/g,

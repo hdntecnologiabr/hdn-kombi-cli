@@ -21,10 +21,16 @@ export const parameters = {
   designToken: {
     files: tokenFiles,
     defaultTab: 'Colors',
+    disable: true,
   },
   options: {
     storySort: {
-      order: ['Docs', 'Design Tokens', '*'],
+      order: [
+        'Docs',
+        ['Como utilizar', 'Tokens', ['Padronização dos Tokens', 'Adicionando Tokens', 'Como utilizar os Tokens']],
+        'Design Tokens',
+        '*',
+      ],
     },
   },
 };

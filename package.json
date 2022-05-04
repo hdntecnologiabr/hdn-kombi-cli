@@ -26,7 +26,8 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md",
     "prepare": "husky install",
-    "kombi": "./bin/run"
+    "kombi": "./bin/run",
+    "kombi:dev": "./bin/dev"
   },
   "dependencies": {
     "@oclif/core": "^1.6.0",
