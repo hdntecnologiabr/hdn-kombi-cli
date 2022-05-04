@@ -1,16 +1,16 @@
 {
-  "include": ["packages", "config", "style_dictionary", "**/*.ts"],
-  "exclude": ["node_modules", "**/node_modules/**", "**/dist/**", "types/emotion.d.ts"],
+  "include": ["packages", "config", "style_dictionary", "types/custom.d.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": false,
+    "target": "ES2021",
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "ES2021"],
+    "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -25,12 +25,8 @@
     "paths": {
       // required to prevent transient dependency warnings
       "@stitches/core": ["node_modules/@stitches/core"],
-      "@stitches/react": ["node_modules/@stitches/react"]
-    }
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
+      "@stitches/react": ["node_modules/@stitches/react"],
+      "@emotion/core": ["./types/emotion.d.ts"]
     }
   }
 }
