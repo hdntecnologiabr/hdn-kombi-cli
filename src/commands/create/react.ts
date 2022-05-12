@@ -8,11 +8,13 @@ import fs = require('fs-extra')
 import path = require('path')
 
 type ProjectType = 'spa' | 'mfe' | 'ds'
+type SpaType = 'cra' | 'vite'
 
 interface PromptResponse {
   orgName?: string
   projectName?: string
   projectType?: ProjectType
+  spaType?: SpaType
   prefix?: string
 }
 
@@ -26,13 +28,17 @@ export default class CreateReact extends Command {
   static args = []
 
   public async run(): Promise<void> {
-    const {orgName, projectName, projectType, prefix} = await this.doPrompt()
+    const {orgName, projectName, projectType, spaType, prefix} = await this.doPrompt()
     const dest = projectType === 'spa' || projectType === 'ds' ? `${projectName}` : `${orgName}-${projectName}`
     let src = `hdntecnologiabr/hdn-kombi-cli/templates/template-react-${projectType}`
+
+    if (projectType === 'spa') src = `${src}-${spaType}`
 
     if (process.env.NODE_ENV === 'development') {
       const templatesPath = path.join(__dirname, '..', '..', '..', 'templates')
       src = `${templatesPath}/template-react-${projectType}`
+
+      if (projectType === 'spa') src = `${src}-${spaType}`
 
       fs.copy(src, dest).then(() => {
         if (projectType === 'ds' && prefix) this.replaceNameDS(dest, prefix)
@@ -67,6 +73,13 @@ export default class CreateReact extends Command {
         name: 'projectType',
         message: 'Project type (single-page or micro-frontend)',
         choices: ['spa', 'mfe', 'ds'],
+      },
+      {
+        when: answers => answers.projectType === 'spa',
+        type: 'list',
+        name: 'spaType',
+        message: 'SPA type (create-react-app or vitejs)',
+        choices: ['cra', 'vite'],
       },
       {
         when: answers => answers.projectType === 'mfe',
