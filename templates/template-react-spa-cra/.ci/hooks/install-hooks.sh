@@ -1,7 +1,7 @@
-cp ci/hooks/commit-msg.sh .git/hooks/commit-msg
-cp ci/hooks/pre-push.sh .git/hooks/pre-push
-cp ci/hooks/pre-commit.sh .git/hooks/pre-commit
-cp ci/hooks/post-merge.sh .git/hooks/post-merge
+cp .ci/hooks/commit-msg.sh .git/hooks/commit-msg
+cp .ci/hooks/pre-push.sh .git/hooks/pre-push
+cp .ci/hooks/pre-commit.sh .git/hooks/pre-commit
+cp .ci/hooks/post-merge.sh .git/hooks/post-merge
 
 rm -f .git/hooks/commit-msg.sample >> /dev/null
 rm -f .git/hooks/pre-push.sample >> /dev/null

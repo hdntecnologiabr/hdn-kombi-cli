@@ -1,7 +1,4 @@
-import startServer from "../server";
 import Api from "./Api";
-
-startServer();
 
 describe("API", () => {
   describe("get", () => {

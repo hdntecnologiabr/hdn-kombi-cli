@@ -5,10 +5,10 @@ export const mockUseStyles = (useStylesFn: jest.Mock, classesArray: string[]) =>
     classesArray.reduce((classes: Record<string, string>, className) => {
       classes[className] = className;
       return classes;
-    }, {})
+    }, {}),
   );
 };
 
-export const mockFormatMessage = (formatMessageFn: jest.Mock) => {
-  formatMessageFn.mockReturnValue({ formatMessage: jest.fn().mockImplementation((obj) => obj.id) });
+export const mockTranslation = (formatMessageFn: jest.Mock) => {
+  formatMessageFn.mockReturnValue({ t: jest.fn().mockImplementation(obj => obj) });
 };

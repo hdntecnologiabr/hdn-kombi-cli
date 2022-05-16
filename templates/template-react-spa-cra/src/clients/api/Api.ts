@@ -1,13 +1,15 @@
 import Axios from "axios";
 
-import { getApiHost } from "../services/host/HostService";
+import { getApiHost } from "services/host/HostService";
 
 export interface IRequest {
   url: string;
   body?: any;
 }
 
-Axios.interceptors.request.use(config => config);
+Axios.interceptors.request.use(config => {
+  return config;
+});
 
 const Api = {
   get: ({ url }: IRequest): Promise<any> =>

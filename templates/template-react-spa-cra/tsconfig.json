@@ -1,11 +1,10 @@
 {
-  "extends": "./tsconfig.paths.json",
   "include": ["src", "config"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "target": "ES2021",
-    "lib": ["dom", "dom.iterable", "esnext", "ES2021"],
-    "allowJs": true,
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "es6"],
+    "allowJs": false,
     "jsx": "react",
     "module": "esnext",
     "allowSyntheticDefaultImports": true,
@@ -20,6 +19,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": false,
+    "outDir": "build"
   }
 }

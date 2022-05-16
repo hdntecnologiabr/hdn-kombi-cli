@@ -1,5 +1,5 @@
 import React from "react";
-import { useIntl } from "react-intl";
+import { useTranslation } from "react-i18next";
 
 import { shallow } from "enzyme";
 
@@ -7,11 +7,11 @@ import { Box, Grid, Typography } from "@mui/material";
 
 import ExamplePage from "./ExamplePage";
 
-jest.mock("react-intl");
+jest.mock("react-i18next");
 
 describe("ExamplePage", () => {
   beforeEach(() => {
-    mockFormatMessage(useIntl as jest.Mock);
+    mockTranslation(useTranslation as jest.Mock);
   });
 
   it("should render a message", () => {
@@ -19,9 +19,9 @@ describe("ExamplePage", () => {
     expect(
       wrapper.matchesElement(
         <Box>
-          <Typography variant="h2">TEST.TRANSLATE</Typography>
+          <Typography variant="h2">example.title</Typography>
           <Grid>
-            <Typography>TEST.MISSING</Typography>
+            <Typography>example.title</Typography>
           </Grid>
         </Box>,
       ),

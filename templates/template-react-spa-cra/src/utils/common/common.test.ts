@@ -1,8 +1,8 @@
-import Common from './common';
+import { Common } from "./common";
 
-describe('common', () => {
-  describe('debounce function', () => {
-    it('should call the function after the time', () => {
+describe("common", () => {
+  describe("debounce function", () => {
+    it("should call the function after the time", () => {
       const functionMocked = jest.fn();
       jest.useFakeTimers();
 
@@ -16,16 +16,16 @@ describe('common', () => {
     });
   });
 
-  describe('camelCase function', () => {
-    it('should return string in camelCase', () => {
-      const camelCaseReturn = Common.camelCase('Camel case');
+  describe("camelCase function", () => {
+    it("should return string in camelCase", () => {
+      const camelCaseReturn = Common.camelCase("Camel case");
 
-      expect(camelCaseReturn).toBe('camelCase');
+      expect(camelCaseReturn).toBe("camelCase");
     });
   });
 
-  describe('random function', () => {
-    it('should return a intenger number between 1 and 100', () => {
+  describe("random function", () => {
+    it("should return a intenger number between 1 and 100", () => {
       const propsMocked = {
         min: 1,
         max: 100,
@@ -37,7 +37,7 @@ describe('common', () => {
       expect(Number.isInteger(randomReturn)).toBeTruthy();
     });
 
-    it('should return a float number between 0 and 50', () => {
+    it("should return a float number between 0 and 50", () => {
       const propsMocked = {
         max: 50,
         floating: true,
@@ -51,14 +51,14 @@ describe('common', () => {
     });
   });
 
-  describe('round function', () => {
-    it('should return a integer number', () => {
+  describe("round function", () => {
+    it("should return a integer number", () => {
       const roundReturn = Common.round(2.4);
 
       expect(roundReturn).toBe(2);
     });
 
-    it('should return a float number', () => {
+    it("should return a float number", () => {
       const roundReturn = Common.round(2.23521, 2);
 
       expect(roundReturn).toBe(2.24);

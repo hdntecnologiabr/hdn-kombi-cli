@@ -1,3 +1,10 @@
-ci/
-component-test/
 README.md
+scripts
+node_modules
+coverage
+build
+dist
+styleguide
+smoke-test
+.ci
+.vscode

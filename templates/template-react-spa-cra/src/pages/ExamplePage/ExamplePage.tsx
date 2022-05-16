@@ -1,16 +1,16 @@
 import React from "react";
-import { useIntl } from "react-intl";
+import { useTranslation } from "react-i18next";
 
 import { Box, Grid, Typography } from "@mui/material";
 
 export default function ExamplePage(): JSX.Element {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
 
   return (
     <Box>
-      <Typography variant="h2">{formatMessage({ id: "TEST.TRANSLATE" })}</Typography>
+      <Typography variant="h2">{t("example.title")}</Typography>
       <Grid>
-        <Typography>{formatMessage({ id: "TEST.MISSING" })}</Typography>
+        <Typography>{t("example.title")}</Typography>
       </Grid>
     </Box>
   );
