@@ -6,11 +6,12 @@ import "package:flutter_test/flutter_test.dart";
 import "package:mocktail/mocktail.dart";
 import "package:template/app/search/external/github/github_search_datasource.dart";
 import "package:template/app/search/infra/models/result_model.dart";
+import 'package:template/app/shared/clients/http_client.dart';
 
 class DioMock extends Mock implements Dio {}
 
 void main() {
-  final dio = DioMock();
+  final dio = DioMock() as IClient;
   final dataSource = GithubSearchDataSource(dio);
   test("Should return a ResultModel", () async {
     when(() => dio.get(faker.internet.httpsUrl())).thenAnswer(

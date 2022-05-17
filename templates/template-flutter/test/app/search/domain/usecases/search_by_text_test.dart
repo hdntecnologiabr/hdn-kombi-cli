@@ -18,7 +18,7 @@ void main() {
       (_) async => right(<Result>[
         Result(
           image: faker.internet.httpsUrl(),
-          name: faker.lorem.word(),
+          // name: faker.lorem.word(),
           nickname: faker.lorem.word(),
           url: faker.internet.httpsUrl(),
         )
