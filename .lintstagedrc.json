@@ -1,3 +1,0 @@
-{
-  "*.ts": "eslint . --ext .ts --config .eslintrc --fix"
-}
