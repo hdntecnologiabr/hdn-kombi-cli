@@ -17,11 +17,11 @@ class GithubSearchDataSource implements SearchDataSource {
       "/search/users?q=${textSearch.trim().replaceAll(' ', '+')}",
     );
     if (result.statusCode == 200) {
-      final jsonList = result.data!["items"] as List;
+      final List<Map<String, dynamic>> jsonList = result.data!["items"];
       final list = jsonList
           .map(
             (item) => ResultModel(
-              nickname: item["login"],
+              nickname: item['login'],
               image: item["avatar_url"],
               url: item["url"],
             ),

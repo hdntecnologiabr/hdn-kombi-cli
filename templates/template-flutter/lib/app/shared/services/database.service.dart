@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import "dart:async";
 
 import "package:hive_flutter/hive_flutter.dart";
@@ -12,10 +14,9 @@ class DatabaseService {
   static Future initialize() async {
     await Hive.initFlutter();
 
-    Hive
-      // Auth
-      ..registerAdapter<Auth>(AuthAdapter())
-      ..openBox<Auth>(getTableName<Auth>());
+    Hive.registerAdapter<Auth>(AuthAdapter());
+
+    await Hive.openBox<Auth>(getTableName<Auth>());
   }
 
   Future close() async {
@@ -33,24 +34,22 @@ class DatabaseService {
     return key != null ? box.get(key) : box.values.map<T>((e) => e).first;
   }
 
-  void create<T>(dynamic model) async {
+  Future<void> create<T>(dynamic model) async {
     final box = initBox<T>();
-    await box.put(model.key, model);
+    await box.put(model.key as dynamic, model);
   }
 
-  void update<T>(dynamic model) async {
+  Future<void> update<T>(dynamic model) async {
     final box = initBox<T>();
     await box.put(model.key, model);
   }
 
   void delete<T>(dynamic key) {
-    final box = initBox<T>();
-    box.delete(key);
+    initBox<T>().delete(key);
   }
 
   void clear<T>() {
-    final box = initBox<T>();
-    box.clear();
+    initBox<T>().clear();
   }
 
   Box initBox<T>() {
