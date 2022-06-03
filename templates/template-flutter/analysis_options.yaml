@@ -1,5 +1,9 @@
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  exclude:
+    - lib/**/**.g.dart
+
 linter:
   rules:
     - always_use_package_imports
@@ -117,7 +121,6 @@ linter:
     - prefer_const_literals_to_create_immutables
     - prefer_constructors_over_static_methods
     - prefer_contains
-    - prefer_double_quotes
     - prefer_equal_for_default_values
     - prefer_expression_function_bodies
     - prefer_final_fields
@@ -192,4 +195,3 @@ linter:
 
     - depend_on_referenced_packages
     - package_names
-    - sort_pub_dependencies
