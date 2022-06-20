@@ -8,7 +8,7 @@ describe("ExampleStore", () => {
   });
 
   it("should change values when loadExampleDone is called", () => {
-    loadExampleDone();
+    loadExampleDone({ title: "Example title", description: "Example description" });
     expect(ExampleStore.getState().isLoading).toEqual(false);
   });
 

@@ -5,6 +5,8 @@ import { ExampleState } from "./ExampleState";
 
 const initialState: ExampleState = {
   isLoading: false,
+  title: null,
+  description: null,
 };
 
 const ExampleStore = createStore<ExampleState>(initialState)
@@ -12,8 +14,10 @@ const ExampleStore = createStore<ExampleState>(initialState)
     ...state,
     isLoading: true,
   }))
-  .on(loadExampleDone, () => ({
+  .on(loadExampleDone, (_, data) => ({
     isLoading: false,
+    title: data.title,
+    description: data.description,
   }))
   .on(loadExampleFail, state => ({
     ...state,
