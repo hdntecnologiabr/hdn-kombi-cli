@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-import { getApiHost } from "services/host/HostService";
+import { getApiHost } from "services/HostService/HostService";
 
 export interface IRequest {
   url: string;

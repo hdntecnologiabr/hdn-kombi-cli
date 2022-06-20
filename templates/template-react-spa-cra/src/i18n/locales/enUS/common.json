@@ -1,5 +1,6 @@
 {
   "example": {
-    "title": "Hello World!"
+    "title": "Hello World!",
+    "loading": "Loading..."
   }
 }
