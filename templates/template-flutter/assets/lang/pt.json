@@ -1,0 +1,10 @@
+{
+	"error": {
+		"nothing-found": "Nada encontrado",
+		"client": "Erro no github",
+		"internal": "Erro interno"
+	},
+	"title": "Pesquisa no Github",
+	"input-label": "Pesquise um usuario...",
+	"empty-helper": "Digite algo para encontrar um usuario..."
+}
